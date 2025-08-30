@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Tracker - HealingNeuro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./dashboard_style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/d_style.css">
+    <link rel="stylesheet" href="./sidebar.css">
+
+</head>
+<body class="bg-white">
+    <div id="navbar" style="display: none;"></div>
+    <div id="d_navbar" style="display: none;"></div>
+
+    <script>
+      const doctorUsername = localStorage.getItem("Doctor_Username");
+
+      if (doctorUsername) {
+        // Show and load doctor navbar
+        document.getElementById("d_navbar").style.display = "block";
+
+        fetch('../HTML/d_navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("d_navbar").innerHTML = data;
+          })
+          .catch(error => console.error("Doctor navbar load error:", error));
+
+      } else {
+        // Show and load user navbar
+        document.getElementById("navbar").style.display = "block";
+
+        fetch('../HTML/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+          })
+          .catch(error => console.error("User navbar load error:", error));
+      }
+    </script>
+
+    <div id="sidebar"></div> <!-- Slider Placeholder -->
+    <script>
+        fetch('./sidebar.html')
+
+            .then(response => response.text())
+            .then(data => document.getElementById("sidebar").innerHTML = data);
+
+            document.addEventListener("DOMContentLoaded", function () {
+            const currentPage = window.location.pathname.split("/").pop(); 
+            const menuItems = document.querySelectorAll(".menu-item");
+            menuItems.forEach(item => item.classList.remove("active")); 
+
+            let activeItem;
+
+            if (currentPage === "dashboard_index.html") {
+            activeItem = document.getElementById("dashboard");
+            } else if (currentPage === "dashboard_score.html") {
+            activeItem = document.getElementById("depression-score");
+            } else if (currentPage === "dashboard_report.html") {
+            activeItem = document.getElementById("report");
+            } else if (currentPage === "dashboard_activity.html") {
+            activeItem = document.getElementById("activity");
+            }
+
+            if (activeItem) {
+            activeItem.classList.add("active");
+            }
+        });
+
+    </script>
+    <div class="mt-20 ml-[20%] min-h-screen w-3/4">
+             <div class="flex-1 p-10"> 
+
+                <div class="flex justify-between items-center mb-6 ">
+                    <h1 class="text-2xl font-bold">Your Tasks</h1>
+                
+                    <div id="add-activity-btn" class="flex items-center gap-2 justify-center bg-gray-100 border-2 border-[#75d0df] rounded-md py-2 px-4 shadow-md w-fit cursor-pointer hover:bg-[#e0f7fa] transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#75d0df]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        <span class="text-[#75d0df] font-medium text-base">Add Task</span>
+                    </div>
+                </div>
+                
+                <!-- Activity Items -->
+                <div class="space-y-4 w-3/4">
+                    <!-- Activity 1 -->
+                    <div class="flex items-center justify-between bg-gray-100 border-2 border-[#75d0df] rounded-2xl p-5 shadow-md mx-auto w-full max-w-4xl px-5">
+                        <div class="font-medium">Have a Walk</div>
+                        <div class="checkbox checked w-6 h-6 rounded-full bg-green-500 flex items-center justify-center cursor-pointer shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity 2 -->
+                    <div class="flex items-center justify-between bg-gray-100 border-2 border-[#75d0df] rounded-2xl p-5 shadow-md mx-auto w-full max-w-4xl px-5">
+                        <div class="font-medium">Do Breathing Exercise</div>
+                        <div class="checkbox unchecked w-6 h-6 rounded-full bg-white flex items-center justify-center cursor-pointer shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity 3 -->
+                    <div class="flex items-center justify-between bg-gray-100 border-2 border-[#75d0df] rounded-2xl p-5 shadow-md mx-auto w-full max-w-4xl px-5">
+                        <div class="font-medium">Write a Journal</div>
+                        <div class="checkbox checked w-6 h-6 rounded-full bg-green-500 flex items-center justify-center cursor-pointer shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity 4 -->
+                    <div class="activity-box-container">
+                        <div class="flex items-center justify-between bg-gray-100 border-2 border-[#75d0df] rounded-2xl p-5 shadow-md mx-auto w-full max-w-4xl px-5">
+                          <div class="font-medium">Talk to your closest person for 15 mins</div>
+                          <div class="checkbox checked w-6 h-6 rounded-full bg-green-500 flex items-center justify-center cursor-pointer shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+
+                    <div id="activityModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+                        <div class="bg-white rounded-2xl p-6 w-[90%] max-w-md shadow-lg">
+                          <h2 class="text-xl font-semibold mb-4">Add New Activity</h2>
+                      
+                          <div id="suggestions" class="space-y-2 mb-4">
+                            <p class="text-gray-500 text-sm">Loading suggestions...</p>
+                          </div>
+                      
+                          <input id="customActivity" type="text" placeholder="Or write your own..." class="w-full px-4 py-2 border rounded-md mb-4" />
+                      
+                          <div class="flex justify-end gap-4">
+                            <button id="cancelBtn" class="text-gray-600 hover:underline">Cancel</button>
+                            <button id="submitActivity" class="bg-[#75d0df] text-white px-4 py-2 rounded-lg shadow hover:bg-[#5bc2d3]">Add</button>
+                          </div>
+                        </div>
+                      </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const doctorUsername = localStorage.getItem("Doctor_Username");
+
+            if (doctorUsername) {
+                const addBtn = document.getElementById("add-activity-btn");
+                    if (addBtn) {
+                        addBtn.classList.remove("hidden");
+                    }
+
+
+            } else {
+                
+                const addBtn = document.getElementById("add-activity-btn");
+                    if (!addBtn) {
+                        console.log("No btn found....");
+                    }else{
+                        console.log("Adding....");
+                        addBtn.classList.add("hidden");
+                    }
+            }            
+        });
+     </script>
+    <script type="module" src="../JAVASCRIPT/script.js"></script>
+    <script type="module" src="../JAVASCRIPT/d_script.js"></script>
+    <script type="module" src="./Report_Suggestions.js"></script>
+</body>
+</html>

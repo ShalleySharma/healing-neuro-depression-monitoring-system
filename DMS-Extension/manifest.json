@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "Depression Monitoring Extension",
+    "version": "1.0",
+    "permissions": ["storage", "scripting", "activeTab", "alarms", "tabs", "file:///*" ],
+    "host_permissions": ["<all_urls>", "*://*/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+    {
+        "matches": ["<all_urls>"],
+        "all_frames": true,
+        "js": ["content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+    {
+        "resources": ["content.js", "../DMS/HTML/index.html"],
+        "matches": ["<all_urls>"],
+        "extension_ids": ["*"]
+    }
+  ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/logo-16.png",
+        "48": "icons/logo-48.png",
+        "128": "icons/logo-128.png"
+      }
+    },
+    "icons": {
+      "16": "icons/logo-16.png",
+      "48": "icons/logo-48.png",
+      "128": "icons/logo-128.png"
+    }
+}
+  

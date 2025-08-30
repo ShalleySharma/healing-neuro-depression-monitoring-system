@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../CSS/booking.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="icon" href="../Images/logo.png" >
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <title>HealingNeuro: A Depression Monitoring System</title>
+    <!-- font link -->
+</head>
+<body>
+
+    <div id="navbar"></div> <!-- Navbar Placeholder -->
+    <script>
+        // Include Navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data);
+    </script>
+
+    <div class="half-circle1">
+        <img src="../Images/half_circle1.png" alt="background_design"></img>
+    </div>
+    <div class="half-circle2">
+        <img src="../Images/half_circle2.png" alt="background_design"></img>
+    </div>
+
+    <div class="profile-container">
+        <div class="profile-card">
+            <img id="profile-pic" src="" alt="Profile Picture">
+            <h2 id="name"></h2>
+            <p id="qualification"></p>
+
+            <!-- icons -->
+            <div class="icons">
+                <a href="#"><i id="callIcon" class="fa-solid fa-video"></i></a>
+                <a href="#"><i class="fa-solid fa-microphone"></i></a>
+                <a href="#"><i class="fa-solid fa-message"></i></a>
+            </div> 
+            <button class="book-session-btn">Book Session</button>
+        </div>
+        <div class="detals">
+            <div class="description">
+                <div class="head1">
+                    <span class="info-header">
+                        <a href="#"><i class="fa-solid fa-graduation-cap"></i></a>
+                        <h3>Qualification</h3>
+                    </span>    
+                    <p id="qualification2"></p>
+                </div>
+                <div class="head2">
+                    <span class="info-header">
+                        <a href="#"><i class="fa-solid fa-language"></i></a>
+                        <h3>Languages Spoken</h3>
+                    </span>     
+                    <p id="language"></p>
+                </div>
+                
+                <div class="head3">
+                    <span class="info-header">
+                        <a href="#"><i class="fa-solid fa-star"></i></a>
+                        <h3>Specialization</h3>
+                    </span>     
+                    <p id="specialization"></p>
+                </div>
+                
+                <div class="head4">
+                    <span class="info-header">
+                        <a href="#"><i class="fa-solid fa-user"></i></a>
+                        <h3>Therapeutic Expertise</h3>
+                    </span>           
+                    <p id="expertise"></p>
+                </div>        
+            </div>
+            <span class="info-header2">
+                <a href="#"><i class="fa-solid fa-check-to-slot"></i></a>
+                <h3>Timming</h3>
+            </span>
+            <p id="available_time"></p>
+
+            <h3>About</h3>
+            <p id="about"></p> 
+            
+            <div id="sessionModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+
+                    <div class="model-elements">
+                        <h2>Book a Session</h2>
+
+                        <div class="elements">
+                            <label for="sessionDate">Select Date:</label>
+                            <input type="date" id="sessionDate">
+                            
+                            <label for="sessionTime">Select Time:</label>
+                            <select id="sessionTime" required></select>
+                            
+                            <button id="confirmBooking">Confirm</button>
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div>
+            <button id="chatBtn">Chat with us</button>
+
+            <div id="chatDialog">
+            <div class="chat-header">
+                <img src="../Images/Logo.png" alt="Healing Neuro Assistant">
+                <h3>Healing Neuro Assistant</h3>
+            </div>
+            
+            <div id="messages-container">
+                <div id="chatMessages"></div>
+                <div class="typing-indicator" id="typingIndicator">
+                <span>•</span><span>•</span><span>•</span>
+                </div>
+            </div>
+            
+            <div class="input-area">
+                <input type="text" id="userInput" placeholder="Type your message..." />
+                <button id="sendBtn">→</button>
+            </div>
+            </div>
+        </div>
+        
+    </div>
+    <script type="module" src="../JAVASCRIPT/script.js" defer></script>
+    <script src="../JAVASCRIPT/booking.js" defer></script>
+</body>
+</html>

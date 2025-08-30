@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression score</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./dashboard_style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/d_style.css">
+    <link rel="stylesheet" href="./sidebar.css">
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        .progress-circle {
+            position: relative;
+            height: 80px; 
+            width: 80px;
+        }
+        .progress-circle svg {
+            transform: rotate(-90deg);
+        }
+        .progress-background {
+            stroke: #edf2f7;
+            fill: none;
+            stroke-width: 12;
+        }
+        .progress-value {
+            fill: none;
+            stroke-width: 12;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.5s;
+        }
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            font-weight: 500;
+            color: #4a5568;
+        }
+        .week1-color, .day1-color {
+            stroke: #667eea;
+        }
+        .week2-color, .day2-color {
+            stroke: #f56565;
+        }
+        .week3-color, .day3-color {
+            stroke: #38d9a9;
+        }
+        .sidebar-item {
+            padding: 0.85rem 1rem;
+            font-weight: 400;
+            font-size: 18px;
+            margin-bottom: 1rem;
+            width: 100%;
+            display: block;
+            color: #1f2937;
+        }
+        .sidebar-active {
+            background-color: #fcd34d;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+        .sun-decoration {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 250px;
+            height: 250px;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .sun-circle {
+            position: absolute;
+            bottom: -120px;
+            right: -120px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: #fcd34d;
+            opacity: 0.5;
+            border: 2px solid #fdba74;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div id="navbar" style="display: none;"></div>
+    <div id="d_navbar" style="display: none;"></div>
+
+    <script>
+      const doctorUsername = localStorage.getItem("Doctor_Username");
+
+      if (doctorUsername) {
+        // Show and load doctor navbar
+        document.getElementById("d_navbar").style.display = "block";
+
+        fetch('../HTML/d_navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("d_navbar").innerHTML = data;
+          })
+          .catch(error => console.error("Doctor navbar load error:", error));
+
+      } else {
+        // Show and load user navbar
+        document.getElementById("navbar").style.display = "block";
+
+        fetch('../HTML/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+          })
+          .catch(error => console.error("User navbar load error:", error));
+      }
+    </script>
+
+    <div id="sidebar"></div> <!-- Navbar Placeholder -->
+    <script>
+        // Include Navbar
+        fetch('./sidebar.html')
+
+            .then(response => response.text())
+            .then(data => document.getElementById("sidebar").innerHTML = data);
+
+            document.addEventListener("DOMContentLoaded", function () {
+            const currentPage = window.location.pathname.split("/").pop(); 
+            const menuItems = document.querySelectorAll(".menu-item");
+            menuItems.forEach(item => item.classList.remove("active")); 
+
+            let activeItem;
+
+            if (currentPage === "dashboard_index.html") {
+            activeItem = document.getElementById("dashboard");
+            } else if (currentPage === "dashboard_score.html") {
+            activeItem = document.getElementById("depression-score");
+            } else if (currentPage === "dashboard_report.html") {
+            activeItem = document.getElementById("report");
+            } else if (currentPage === "dashboard_activity.html") {
+            activeItem = document.getElementById("activity");
+            }
+
+            if (activeItem) {
+            activeItem.classList.add("active");
+            }
+        });
+        
+    </script>
+
+        <!-- Main Content -->
+        <div class="flex-1 bg-gray-100 p-6 relative mt-24">
+            <!-- Web Score Section -->
+            <div class="mb-12 z-10 relative">
+                <h2 class="text-2xl font-bold text-center mb-6">Web Score</h2>
+                <div class="flex items-center justify-center">
+                    <button class="text-blue-500 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+
+                    <div id="weekly-cards" class="flex items-center justify-center"></div>
+
+                    <button class="text-blue-500 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Extension Score Section -->
+            <div class="mb-6 z-10 relative">
+                <h2 class="text-2xl font-bold text-center mb-6">Extension Score</h2>
+                <div class="flex items-center justify-center">
+                    <button class="text-blue-500 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+
+                    <div id="daily-cards" class="flex items-center justify-center"></div>
+                    
+                    <button class="text-blue-500 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+       
+    <script type="module" src="../JAVASCRIPT/script.js"></script>
+    <script type="module" src="../JAVASCRIPT/d_script.js"></script>
+    <script type="module" src="./fetch_dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Healing Neuro - Chat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet"  href="style.css">
+</head>
+<body>
+
+<div class="chat-container">
+  <div class="chat-header">
+    Healing Neuro Chat
+  </div>
+  <div class="chat-box" id="chat-box">
+    <!-- Messages will go here -->
+  </div>
+  <div class="typing-indicator" id="typing-indicator"></div>
+
+  <div class="chat-input-area">
+    <input type="text" id="messageInput" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

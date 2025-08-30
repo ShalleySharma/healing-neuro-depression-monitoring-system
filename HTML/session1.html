@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/session1.css">
+    <title>Session I - HealingNeuro</title>
+    <link rel="icon" href="../Images/Logo.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="Title">
+        <h1>READY FOR THE 1st SESSION</h1>
+    </div>
+
+    <div class="container">
+        <div class="progress-bar">
+            <span class="step" id="step-text">STEP 1 OF 10</span>
+            <div class="progress">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="question-container">
+            <div class="question-slide" id="question-1">
+                <h2 id="question-text">Do you feel little interest or pleasure in doing things</h2>
+                <div class="options">
+                    <div class="part_a">
+                        <div class="option" onclick="selectOption(1, 'Never')">Never <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(1, 'Some of the time')">Some of the time <span class="tick-mark">✔</span></div>
+                    </div>
+                    <div class="part_b">
+                        <div class="option" onclick="selectOption(1, 'Most of the time')">Most of the time <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(1, 'Nearly all the times')">Nearly all the times <span class="tick-mark">✔</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-slide" id="question-2">
+                <h2 id="question-text">Trouble falling or staying asleep, or sleeping too much
+                </h2>
+                <div class="options">
+                    <div class="part_a">
+                        <div class="option" onclick="selectOption(2, 'Never')">Never <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(2, 'Some of the time')">Some of the time <span class="tick-mark">✔</span></div>  
+                    </div>
+                    <div class="part_b">
+                        <div class="option" onclick="selectOption(2, 'Most of the time')">Most of the time <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(2, 'Nearly all the times')">Nearly all the times <span class="tick-mark">✔</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-slide" id="question-3">
+                <h2 id="question-text">Do you often feel bad about yourself or think you are a failure?</h2>
+                <div class="options">
+                    <div class="part_a">
+                        <div class="option" onclick="selectOption(3, 'Never')">Never <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(3, 'Some of the time')">Some of the time <span class="tick-mark">✔</span></div>
+                    </div>
+                    <div class="part_b">
+                        <div class="option" onclick="selectOption(3, 'Most of the time')">Most of the time <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(3, 'Nearly all the times')">Nearly all the times <span class="tick-mark">✔</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-slide" id="question-4">
+                <h2 id="question-text">Do you takes a lot of effort to start working on something new.</h2>
+                <div class="options">
+                    <div class="part_a">
+                        <div class="option" onclick="selectOption(4, 'Never')">Never <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(4, 'Some of the time')">Some of the time <span class="tick-mark">✔</span></div>
+                    </div>
+                    <div class="part_b">
+                        <div class="option" onclick="selectOption(4, 'Most of the time')">Most of the time <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(4, 'Nearly all the times')">Nearly all the times <span class="tick-mark">✔</span></div>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="question-slide" id="question-5">
+                <h2 id="question-text">Don't you get as much satisfaction out of things as you used to</h2>
+                <div class="options">
+                    <div class="part_a">
+                        <div class="option" onclick="selectOption(5, 'Never')">Never <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(5, 'Some of the time')">Some of the time <span class="tick-mark">✔</span></div>
+                    </div>
+                    <div class="part_b">
+                        <div class="option" onclick="selectOption(5, 'Most of the time')">Most of the time <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(5, 'Nearly all the times')">Nearly all the times <span class="tick-mark">✔</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-slide" id="question-6">
+                <h2 id="question-text">Feel disinterested in things that earlier seemed pleasurable.</h2>
+                <div class="options">
+                    <div class="part_a">
+                        <div class="option" onclick="selectOption(6, 'Never')">Never <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(6, 'Some of the time')">Some of the time <span class="tick-mark">✔</span></div>
+                    </div>
+                    <div class="part_b">
+                        <div class="option" onclick="selectOption(6, 'Most of the time')">Most of the time <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(6, 'Nearly all the times')">Nearly all the times <span class="tick-mark">✔</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-slide" id="question-7">
+                <h2 id="question-text">Do you struggle with making decisions regularly?</h2>
+                <div class="options">
+                    <div class="part_a">
+                        <div class="option" onclick="selectOption(7, 'Never')">Never <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(7, 'Some of the time')">Some of the time <span class="tick-mark">✔</span></div>
+                    </div>
+                    <div class="part_b">
+                        <div class="option" onclick="selectOption(7, 'Most of the time')">Most of the time <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(7, 'Nearly all the times')">Nearly all the times <span class="tick-mark">✔</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-slide" id="question-8">
+                <h2 id="question-text">Do you frequently feel restless, anxious, or easily irritated?</h2>
+                <div class="options">
+                    <div class="part_a">
+                        <div class="option" onclick="selectOption(8, 'Never')">Never <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(8, 'Some of the time')">Some of the time <span class="tick-mark">✔</span></div>
+                    </div>
+                    <div class="part_b">
+                        <div class="option" onclick="selectOption(8, 'Most of the time')">Most of the time <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(8, 'Nearly all the times')">Nearly all the times <span class="tick-mark">✔</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-slide" id="question-9">
+                <h2 id="question-text">Do you feel you are alone and no one is supporting you ?</h2>
+                <div class="options">
+                    <div class="part_a">
+                        <div class="option" onclick="selectOption(9, 'Never')">Never <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(9, 'Some of the time')">Some of the time <span class="tick-mark">✔</span></div>
+                    </div>
+                    <div class="part_b">
+                        <div class="option" onclick="selectOption(9, 'Most of the time')">Most of the time <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(9, 'Nearly all the times')">Nearly all the times <span class="tick-mark">✔</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-slide" id="question-10">
+                <h2 id="question-text">Have you find yourself guilty of something and can't get out of it?</h2>
+                <div class="options">
+                    <div class="part_a">
+                        <div class="option" onclick="selectOption(10, 'Never')">Never <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(10, 'Some of the time')">Some of the time <span class="tick-mark">✔</span></div>
+                    </div>
+                    <div class="part_b">
+                        <div class="option" onclick="selectOption(10, 'Most of the time')">Most of the time <span class="tick-mark">✔</span></div>
+                        <div class="option" onclick="selectOption(10, 'Nearly all the times')">Nearly all the times <span class="tick-mark">✔</span></div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+
+        <div class="navigation">
+            <button class="previous-question" onclick="goToPreviousQuestion()">PREVIOUS QUESTION</button>
+            <button class="next-question" onclick="goToNextQuestion()">NEXT QUESTION</button>
+        </div>
+
+        <div class="button">
+            <a href="#" onclick="showPopup(); return false;" style="margin-right: 0;">SUBMIT</a>
+        </div>
+
+        <div id="popup" class="popup hidden">
+            <div id="conformation" class="content visible" style="margin-right: 25px; margin-left: 25px;">
+                <img src="../Images/cross.png">
+                <h2>ARE YOU SURE</h2>
+                <p>Would you like to submit this session? Please note that once you click 'Yes,' you won't be able to modify your responses.</p>
+                <hr style="width: 100%; margin: 20px auto; border: 0.5px solid #ddd;">
+                <div class="button-container">
+                    <button class="cancel-button" onclick="closePopup()">Cancel</button>
+                    <button class="yes-button" onclick="showNextContent()">Yes</button>
+                </div>
+            </div>
+            <div id="final_submission" class="content hidden" style="margin-right: 30px; margin-left: 30px;">
+                <img src="../Images/tick.png">
+                <h2>Session 1 Completed!</h2>
+                <p style="margin-bottom: 19px;">Your responses have been recorded. Please proceed to Session 2 to continue.</p>
+                <hr style="width: 100%; margin: 19px auto; border: 0.5px solid #ddd;">
+                <button class="continue-button" type="button" onclick="closePopup(); window.location.href = 'session2.html'">Continue</button>
+            </div>
+        </div>
+    
+        <!-- Overlay to dim background when pop-up is active -->
+        <div id="overlay" class="overlay"></div>
+
+    </div>
+
+    <script type="module" src="../JAVASCRIPT/session1_script.js"></script>
+    <script type="module" src="../JAVASCRIPT/Flask_script.js"></script>
+</body>
+</html>

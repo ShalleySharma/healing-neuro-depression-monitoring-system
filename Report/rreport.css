@@ -1,0 +1,392 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  border: 1px solid #ccc;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 100px;
+  margin-right: 10px;
+}
+.logo h3 {
+    font-size: 36px;        
+    font-weight: bold;
+    color: #333;
+}
+  
+.logo small {
+    font-size: 16px;         
+    color: #666;
+}
+.contact {
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: right;
+}
+.bold_line img {
+    height: auto; 
+    width: 100%;
+    margin: 0 auto;
+}
+.report-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 0 25px 0;
+}
+.report-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+  
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #0f0f0f;;
+    padding-bottom: 20px;
+    margin: 0 10px;
+    gap: 10px;
+}
+  
+.info-box {
+    font-size: 15px;
+    flex: 1;
+}
+.info-box left-info{
+    width: 55%;
+}
+
+.info-box right-info{
+  width: 50%;
+
+}
+
+.left-info {
+    border-right: 1px solid #0f0f0f;;
+    padding: 15px;
+    text-align: left;
+}
+.patient-details {
+    flex: 1;
+    font-size: medium;
+}
+.left-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}  
+.qr-box {
+    margin-top: 15px;
+    text-align: center;
+}
+  
+.qr-box img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+  
+.right-info {
+    text-align: left;
+    padding-left: 20px;
+}
+  
+.hospital-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+  
+.hospital-logo img {
+    width: 80px;
+    height: 80px;
+}
+  
+.ref-by {
+    font-size: 18px;
+}
+  
+.report-body {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    gap: 30px;
+}
+  
+.report-left {
+    width: 54%;
+}
+
+.report-right {
+  width: 50%;
+}
+
+.report-left {
+    font-size: 18px;
+    border-right: 1px solid #0f0f0f; 
+    padding-right: 30px; 
+    padding-left: 20px;
+  }  
+.custom-progress {
+    width: 100%;
+    background: #eee;
+    height: 8px;
+    border-radius: 10px;
+    margin-top: 10px;
+    position: relative;
+}
+  
+.progress-fill {
+    height: 100%;
+    background: #6c63ff;
+    border-radius: 10px;
+}
+  
+.score-numbers {
+    margin-top: 5px;
+    font-size: 15px;
+}
+  
+.score-meaning {
+    font-size: 15px;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+  
+.word-count {
+    margin-top: 15px;
+    padding: 10px;
+}
+
+#wordCountChart {
+    padding: 10px; 
+    margin-top: 10px;
+  }  
+.checkboxes, .label {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+  
+.checkboxes label {
+    margin-right: 15px;
+}
+
+.word-cloud {
+  width: 100%;
+  height: 80%;
+  margin-top: 20px;
+  padding: 20px;
+  font-size: large;
+}
+
+#wordCloud {
+    width: 100%;
+    height: 70%;
+    margin: 20px auto;
+} 
+
+.score-label {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.risk-alert-section {
+  margin: 30px 0;
+}
+  
+  .risk-alert-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .risk-item {
+    margin-bottom: 10px;
+  }
+  
+  .risk-item h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .risk-item p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+  }
+    
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.doctor {
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .doctor strong {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+.signature {
+    margin-top: 10px;
+    width: 120px;
+    height: auto;
+}
+.download{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#75d0df ;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-color: #056bf4;
+    transition: background-color 0.3s ease;
+    margin: 15px auto;
+}
+.download:hover {
+    background-color: #056bf4;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+/* Media Queries for Responsiveness */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .container {
+      padding: 15px;
+    }
+  
+    .report-left, .report-right,
+    .info-box {
+      flex: 1 1 100%;
+    }
+  
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .footer {
+      display: flex;
+      align-items: flex-start;
+      text-align: left;
+    }
+  
+    .contact {
+      text-align: left;
+      font-size: 14px;
+    }
+  
+    .doctor {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 15px;
+    }
+  
+    .signature {
+      height: 30px;
+    }
+  }
+  
+  /* Phones */
+  @media (max-width: 600px) {
+    .header {
+      gap: 10px;
+    }
+  
+    .logo img {
+      height: 40px;
+    }
+  
+    .logo h3 {
+      font-size: 18px;
+    }
+  
+    .report-title {
+      font-size: 20px;
+    }
+  
+    .score-meaning,
+    .checkboxes,
+    .risk-item {
+      font-size: 14px;
+    }
+  
+    .qr-box img {
+      height: 80px;
+      width: 80px;
+    }
+  
+    .download {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  
+    .word-count canvas,
+    #wordCloud {
+      height: 150px !important;
+      width: 100% !important;
+    }
+  }
+  
+  /* Very Small Phones */
+  @media (max-width: 400px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .contact {
+      font-size: 13px;
+    }
+  
+    .report-left, .report-right {
+      padding: 0;
+    }
+  
+    .bold_line img {
+      height: 5px;
+    }
+  
+    .signature {
+      height: 25px;
+    }
+  }
+  

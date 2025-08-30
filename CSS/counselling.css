@@ -1,0 +1,584 @@
+/* General Styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;    
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+.Counselor_heading{
+    display: flex;
+    width: 100%;;
+    overflow: auto;
+    align-items: center;
+    padding: 80px 40px 0px ;
+}
+.quote {
+    max-width: 50%;
+    font-size: 1em;
+    margin-left: 0;
+    color: #000000;
+}
+.quote_pic {
+    max-width: 50%;
+    text-align: center;
+    margin-left: 40px;
+}
+
+.quote_pic img {
+    max-width: 100%;
+    height: auto;
+    max-height: 580px;
+}
+@media (max-width: 768px) {
+    .Counselor_heading {
+        flex-direction: column;
+        padding: 20px;
+        margin-top: 20px; 
+    }
+
+    .quote  {
+        font-size: 1em;
+        max-width: 100%;
+        margin-left: 0;
+    }
+    .quote h2 {
+        font-size: 1.2em; 
+        text-align: center;
+    }
+    .more_counselor {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+    .quote_pic {
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .quote_pic img {
+        max-height: 300px; 
+    }
+}
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;    
+}
+
+/* filters */
+.title {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    max-width: 100%;
+}
+/* select date filter */
+.date-input, .select-option input, .time-input, .language-input{
+    flex: 1;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    width: 100%;
+    max-width: 200px;
+    min-width: 100px;
+    height: 30px; 
+    padding: 5px;
+    border: 1px solid #040404
+}
+.date-input{
+    padding: 5px;
+}
+/* datepicker styles */
+.datepicker-container{
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    /* justify-content: center;  */
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.datepicker{
+    position: absolute;
+    top: 100%;
+    z-index: 100;
+    margin-top: 2px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+.datepicker button{
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+.days, .dates {
+    display: grid;
+    grid-template-columns: repeat(7,32px);
+    gap: 10px;
+    margin-block: 10px;
+}
+.days span{
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+.dates button{
+    color: slategray;
+    aspect-ratio: 1;
+}
+.dates button:disabled {
+   opacity: 0.5;
+   pointer-events: none;
+   user-select: none;
+
+}
+.dates button:hover{
+    background: rgba(119, 136, 153, 0.1);
+}
+.dates button.today{
+    background: #75d0df;
+    color: #fff;
+}
+.dates button.selected{
+    background: #056bf4;
+    color: #fff;
+}
+.datepicker-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+.datepicker-header select, .datepicker-header input{
+    font-size: 14px;
+    border: 1px solid #eee;
+}
+.datepicker-header input{
+    max-width: 64px;
+}
+.datepicker-header button{
+    color: #75d0df;
+}
+.datepicker-header button:hover {
+    color: #056bf4;
+}
+.datepicker-footer{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+.datepicker-footer button{
+    background: #75d0df;
+    padding: 3px 10px;
+    color: #fff;
+}
+.datepicker-footer button.apply{
+    background-color: #056bf4;
+    
+}
+
+.specialization{ 
+    position: relative;
+}
+.select-option{
+    position: relative;
+    border-radius: 5px; 
+    font-size: 0.85rem; 
+    width: 150px; 
+    border: 1px solid #040404;
+    cursor: pointer;
+}
+.select-option input{
+    width: 100%;
+    max-width: 250px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 5px;
+    border: 0 !important;
+    outline: 0!important;
+}
+.select-option:after{
+    content:"";
+    border-top: 8px solid #000;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    margin-top: -4px;   
+}
+.dp_content{
+    background-color: #fff;
+    position: absolute;
+    color: #000;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 100%;
+    max-width: 250px;
+    z-index: 999;
+    padding: 15px;
+    display: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.search input{
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+    outline: 0;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
+}
+.options{
+    margin-top: 8px;
+    max-height: 200px;
+    width: 100%;
+    max-width: 250px;
+    overflow-y: auto;
+    padding: 0;
+}
+.options li{
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid gray; 
+}
+.options li:hover{
+    background-color: #f2f2f2;
+}
+.select-box.active .content{
+    display: block;
+}
+.select-box.active .select-option:after{
+    transform: rotate(-180deg);
+}
+.search_filter {
+    position: relative;
+    display: inline-block;
+    
+}
+.search_filter input {
+    width: 100%;
+    max-width: 250px;
+    padding: 8px 35px 8px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #b3b3b3;
+    outline: none;
+}
+.search_filter .search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.reset{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color:#75d0df ;
+    color: #000;
+    padding: 6px 20px;
+    border-radius: 5px;
+    font-size: 1 rem;
+    cursor: pointer;
+    border-color: #056bf4;
+    transition: background-color 0.3s ease;
+}
+.reset:hover {
+    background-color: #056bf4;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .datepicker-container {
+        /* flex-direction: column; */
+        align-items: center;
+    }
+    .filter {
+        width: 100%;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .datepicker-container, 
+    .specialization, 
+    .search_filter, 
+    .reset_filter {
+        /* width: 100%; */
+        max-width: 100%;
+    }
+
+    .date-input, .select-option input, .time-input, .language-input {
+        width: 100%;
+        font-size: 0.85rem;
+        height: 30px;
+    }
+
+    .datepicker {
+        width: 100%;
+        max-width: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .dates {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+    }
+
+    .dates button {
+        font-size: 12px;
+    }
+}
+
+/* Very small screens (mobile) */
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .date-input, .select-option input, .time-input, .language-input {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+
+    .search_filter input {
+        font-size: 0.8rem;
+    }
+
+    .datepicker {
+        padding: 5px;
+    }
+
+    .dates {
+        gap: 4px;
+    }
+
+    .datepicker-header select, .datepicker-header input {
+        font-size: 12px;
+    }
+
+    .datepicker-footer button {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+}
+
+
+/* Counsellor Cards */
+.products-container, .products-container2  {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.product {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.stars {
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 1.2rem;
+    color: #2ecc71;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.buttons a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.view { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#FFD93D ;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-color: #FFC107;
+    transition: background-color 0.3s ease;
+    margin: 15px auto;
+}
+
+.view:hover {
+    background-color: #FFC107;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.book {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#75d0df ;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-color: #056bf4;
+    transition: background-color 0.3s ease;
+    margin: 15px auto;
+}
+
+.book:hover {
+    background-color: #056bf4;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Close Button */
+.product .fa-times {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #999;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.product .fa-times:hover {
+    color: #e74c3c;
+}
+
+.more_counselor, .recommendation, .less_counselor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    margin: 20px auto; 
+    background-color: #FFD93D;
+    color: #000000;
+    padding: 10px 20px;
+    border: 2px solid #423b56;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+
+
+.more_counselor:hover, .recommendation:hover, .less_counselor:hover {
+    background-color: #FFC107;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Hidden area */
+.products-container2 {
+    display: none; 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.products-container2.show {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Fix for .hidden - Use visibility instead of display */
+.hidden {
+    visibility: hidden;  
+    opacity: 0;         
+    transition: opacity 0.3s ease;
+}
+
+.hidden:not(.show) {
+    display: none;  
+}
+
+
+

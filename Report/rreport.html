@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HealingNeuro Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="rreport.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+  <div class="container" id="reportContent">
+
+    <div class="header">
+      <div class="logo">
+        <img src="Images/logo.png" alt="Logo">
+        <div>
+          <h3>HealingNeuro</h3>
+          <small>Engage, Monitor, Heal</small>
+        </div>
+      </div>
+      <div class="contact">
+        📞  99XXXXXX89 | 78XXXXXX34<br>
+        📧 healingneuro@gmail.com<br>
+        🌐 www.healingneuro.com
+      </div>
+    </div>
+    <div class="bold_line">
+        <img src="Images/report_line.png" alt="bold line design">
+    </div>
+
+    <h2 class="report-title">Report</h2>
+
+
+<div class="info-section">
+    <div class="info-box left-info">
+        <div class="left-inner">
+          <div class="patient-details">
+            <strong>Name</strong><br>
+            Age<br>
+            Gender<br>
+            PID<br>
+            Date
+          </div>
+          <div class="qr-box">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=555&size=100x100" alt="QR Code">
+          </div>
+        </div>
+    </div>    
+
+  <div class="info-box right-info">
+    <div class="hospital-logo">
+      <img src="Images/Organizationlogo.png" alt="Hospital Icon">
+      <div>
+        <strong>Neuro Hospital</strong><br>
+        <small>Sector 109, Gurgaon, 129999</small>
+      </div>
+    </div>
+    <div class="ref-by">Ref. by: <strong>Dr Payal Shah</strong></div>
+  </div>
+</div>
+
+    <div class="report-body">
+        <!-- Left Section -->
+        <div class="report-left">
+          <strong>Depression Score :</strong>
+          <div class="custom-progress">
+            <div class="progress-fill" style="width: 0%;"></div>
+          </div>
+          <div class="score-numbers">
+            <span style="color: red;">Average - Score</span>
+            <span style="float: right;">100</span>
+          </div>
+      
+          <div class="score-meaning">
+            <strong>Score Meaning :</strong><br>
+            41-50: Mild depression<br>
+            51–70: Moderate depression<br>
+            71–100: Severe depression
+          </div>
+      
+          <div class="word-count">
+            <strong>Word Count :</strong>
+            <canvas id="wordCountChart" width="300px" height="300px"></canvas>
+          </div>
+        </div>
+      
+        <!-- Right Section -->
+        <div class="report-right">
+          <div class="label">
+            <strong>Predicted Label:</strong>
+            <div id="predicted_lable">Label</div>
+          </div>
+
+          <div class="checkboxes">
+              <strong>Stage of Depression:</strong><br>
+              <label><input type="radio" name="stage"> Mild</label>
+              <label><input type="radio" name="stage"> Moderate</label>
+              <label><input type="radio" name="stage"> Severe</label>
+          </div>
+            
+          <div class="word-cloud">
+            <strong>Word Cloud :</strong>
+            <div id="wordCloud"></div>
+          </div>
+      </div>
+    </div>
+      
+
+    <div class="risk-alert-section">
+        <h2 class="risk-alert-heading">Risk Alert</h2>
+      
+        <div class="risk-item">
+          <h4>High Depression</h4>
+          <p>Probability of having depression</p>
+        </div>
+      
+    </div>
+      
+    <div class="footer">
+        <div class="doctor">
+          <strong>Dr Payal Shah</strong><br>
+          (Psychologist)
+          <p><img src="Images/signature1.png" alt="Dr Payal Signature" class="signature"></p>
+        </div>
+      
+        <div class="doctor">
+          <strong>Dr Vimal Shah</strong><br>
+          (NeuroSpecialist)
+          <p><img src="Images/signature2.png" alt="Dr Vimal Signature" class="signature"></p>
+        </div>
+    </div>
+      
+  </div>
+  <button class="download">Download PDF</button>
+  <script type="module" src="rreport.js"></script>
+  <script type="module" src="fetch_data.js"></script>
+</body>
+</html>

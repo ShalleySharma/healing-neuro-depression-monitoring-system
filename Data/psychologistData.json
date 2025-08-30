@@ -1,0 +1,105 @@
+[
+    {
+        "id": 1,
+        "image": "../Images/expert1.jpg",
+        "name": "Dr. Devika Irny",
+        "qualification": "MBBS, MD (Psychiatry)",
+        "qualification2": "MBBS, MD (Psychiatry)",
+        "language": "English, Hindi",
+        "specialization": [
+            "Stress", "Anxiety", "Depression", "Relationship Issues",
+            "Couple Counseling", "Sexual Issues", "Grief & Loss",
+            "Psychosis", "Sleep Issues", "Family Therapy", "Body Image",
+            "Self Confidence", "Anger", "LGBTQI", "Phobia", "Bipolar Disorder"
+        ],
+        "expertise": [
+            "Cognitive Behavioural Therapy (CBT)",
+            "Mindfulness-Based Therapies",
+            "Habit Coaching"
+        ],
+        "available_time": "10AM - 12AM",
+        "about": "Dr. Devika Irny is an eminent practicing psychiatrist with 5+ years of experience. He is a consultant psychiatrist at the Peroor Super Speciality Hospital & specializes in de-addiction, sexology, sleep disorders, depression, anxiety, OCD, and marital problems. He has a multitude of research papers published under his name on geriatric psychiatry."
+    },
+    {
+        "id": 2,
+        "image": "../Images/expert2.jpg",
+        "name": "Dr. Harshita Murai",
+        "qualification": "M.Phil in Psychology (Gold Medalist)",
+        "qualification2": "M.Phil in Psychology (Gold Medalist)",
+        "language": "English, Hindi, Marathi, Konkani",
+        "specialization": [
+            "Anxiety", "Stress", "Depression", "Relationship Issues", "Couple Counseling", "Sexual Issues", "Suicidal Ideation", "Grief & Loss", "OCD", "Bipolar Disorder", "Sleep Issues", "Cognitive Rehabilitation", "Trauma", "ADHD (Adult)", "Autism Spectrum Disorders", "Self-harm", "Body Image", "Self Confidence", "Anger", "Psycho-Somatic Disorders", "Pain Management", "LGBTQI", "Phobia", "Child Counseling", "Career Counselling", "Marital Discord", "Mood Disorder"
+        ],
+        "expertise": [
+            "Cognitive Behavioural Therapy (CBT)", "Dialectical Behavioural Therapy (DBT)", "Client Centred", "Rational Emotive Behavioural Therapy (REBT)", "Art Therapy", "Mindfulness Based Therapies", "Play and Art therapy for kids", "Behavioural modification for kids"
+        ],
+        "available_time": "10AM - 2PM",
+        "about": "Dr. Harshita Murai is a skilled therapist with a passion for psychology and helping others. She believes in having a friendly relationship with her clients and solving issues as a team. She also equips her clients to be self-sufficient in resolving their issues through coping strategies so that they can have an optimistic view of the world around them.With years of experience working with individuals in need of mental health support, she has developed a keen understanding of the intricacies of the human mind and the ways in which it can be positively impacted through therapy."
+    },
+    {
+        "id": 3,
+        "image": "../Images/expert3.jpg",
+        "name": "Dr. Ritam Dubey",
+        "qualification": "MA in Clinical Psychology",
+        "qualification2": "MA in Clinical Psychology",
+        "language": "English, Hindi, Malayalam",
+        "specialization": [
+            "Stress", "Anxiety", "Depression", "Relationship Issues", "Couple Counseling", "Sexual Issues", "Grief & Loss", "Psychosis", "Sleep Issues", "Family Therapy", "Body Image", "Self Confidence", "Anger", "LGBTQI", "Phobia", "Bipolar Disorder"
+        ],
+        "expertise": [
+            "Cognitive Therapy", "Mindfulness Based Therapies", "Habit Coaching", "Life Coaching", "Trauma Informed Therapy"
+        ],
+        "available_time": "1PM - 2PM",
+        "about": "Ritam has more than a decade of experience in the field of mental health and counseling. He has a humanitarian approach towards handling psycho-social issues. He has worked in rehabilitation and academic settings. Ritam therapeutic style is an eclectic mix of cognitive and mindfulness based techniques. He is a passionate psychotherapist whose academic credentials Positive Psychology, Behavioural Neuroscience, Career Coaching & Psychological First Aid training."
+    },
+    {
+        "id": 4,
+        "image": "../Images/expert4.jpg",
+        "name": "Dr. Ujwal sangawar",
+        "qualification": "MSc in Clinical Psychology",
+        "qualification2": "MSc in Clinical Psychology",
+        "language": "English, Hindi, Gujarati",
+        "specialization": [
+            "Anxiety", "Depression", "Anger Management", "Family Issues"
+        ],
+        "expertise": [
+            "Cognitive Therapy", 
+            "Relationship Counseling"
+        ],
+        "available_time": "1PM - 4PM",
+        "about": "Dr. Ujwal is a Counselling Psychologist, a certified Psychological Counsellor, Life Skills Trainer, and a Transactional Analysis (TA) Practitioner. He is also a Parenting Expert, Storyteller and Educator in the field of Social-Emotional Development. He integrates different modalities like TA, CBT, Storytelling, Life Skills and Psychotherapy in her work with children, adolescents, adults, corporate professionals, women groups, parents, teachers, etc. Ujwal is associated with various NGOs, Schools, Colleges, Corporates as a Counsellor, Leadership Coach, Life Skills Trainer, Therapist and Storyteller. He also spends time mentoring and coaching amateur trainers and counsellors."
+    },
+    {
+        "id": 5,
+        "image": "../Images/expert5.jpg",
+        "name": "Dr. V S Ananthakrishnan",
+        "qualification": "MA in Clinical Psychology",
+        "qualification2": "MA in Clinical Psychology",
+        "language": "English, tamil, Kannada",
+        "specialization": [
+            "Anxiety", "Depression", "Anxiety", "Stress", "Depression", "Relationship Issues", "Couple Counseling", "Sexual Issues", "Suicidal Ideation", "Sleep Issues", "Cognitive Rehabilitation", "ADHD (Adult)", "Autism Spectrum Disorders", "Family Therapy", "Self-harm", "Self Confidence", "Pain Management", "Psycho-Somatic Disorders", "Body Image", "Anger", "Child Counseling", "Geriatric Issues", "Eating Disorders", "Marital Discord", "Mood Disorder"
+        ],
+        "expertise": [
+            "Cognitive Therapy", "Relationship Counseling", "Dialectical Behavioural Therapy (DBT)", "Rational Emotive Behavioural Therapy (REBT)", "Client Centred", "Art Therapy, Music Therapy", "Mindfulness Based Therapies", "Play and Art therapy for kids", "Behavioural modification for kids"
+        ],
+        "available_time": "8AM - 12AM",
+        "about": "The strong desire to bring a positive change in somebody's life and spread smiles motivated Charmi to pursue her career in psychology. Being in this field and empowering her clients is so magical and serene that it encouraged her to achieve the self she is today. She has extensive experience as a mental health counselor working with children, adolescents, parents, young adults, and the adult population. She provides a non-judgmental, safe space, rooted in empathy and compassion."
+    },
+    {
+        "id": 6,
+        "image": "../Images/expert6.jpg",
+        "name": "Dr. Niharika Kamath",
+        "qualification": "MSc in Clinical Psychology",
+        "qualification2": "MSc in Clinical Psychology",
+        "language": "English, Hindi, Tamil",
+        "specialization": [
+            "Depression", "Relationship Issues", "Couple Counseling", "Suicidal Ideation", "Grief & Loss", "Sleep Issues", "Narcissistic Abuse", "Trauma", "Family Therapy", "Self-harm, Body Image", "Self Confidence", "Anger", "LGBTQI", "Phobia", "Child Counseling", "Career Counselling"
+        ],
+        "expertise": [
+            "Client Centred", "Mindfulness Based Therapies", "Trauma Informed Therapy", "Behavioural modification for kids"
+        ],
+        "available_time": "4PM - 8PM",
+        "about": "Dr. Niharika core belief is to provide a safe space to the client where they can express, address and manage their challenges, directing towards their mental health well-being. She has an extensive experience of working with clients of various age groups, community, gender, sexuality, and race. She provides a non-judgmental, empathetic and compassionate space to all her clients; and works with clients in inclusive therapeutic approach."
+    }
+    
+]

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./dashboard_style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/d_style.css">
+    <link rel="stylesheet" href="./sidebar.css">
+
+</head>
+<body class="bg-white">
+    <div id="navbar" style="display: none;"></div>
+    <div id="d_navbar" style="display: none;"></div>
+
+    <script>
+      const doctorUsername = localStorage.getItem("Doctor_Username");
+
+      if (doctorUsername) {
+        // Show and load doctor navbar
+        document.getElementById("d_navbar").style.display = "block";
+
+        fetch('../HTML/d_navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("d_navbar").innerHTML = data;
+          })
+          .catch(error => console.error("Doctor navbar load error:", error));
+
+      } else {
+        // Show and load user navbar
+        document.getElementById("navbar").style.display = "block";
+
+        fetch('../HTML/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+          })
+          .catch(error => console.error("User navbar load error:", error));
+      }
+    </script>
+
+    <div id="sidebar"></div> <!-- Navbar Placeholder -->
+    <script>
+        // Include Navbar
+        fetch('./sidebar.html')
+
+            .then(response => response.text())
+            .then(data => document.getElementById("sidebar").innerHTML = data);
+
+            document.addEventListener("DOMContentLoaded", function () {
+            const currentPage = window.location.pathname.split("/").pop(); 
+            const menuItems = document.querySelectorAll(".menu-item");
+            menuItems.forEach(item => item.classList.remove("active")); 
+
+            let activeItem;
+
+            if (currentPage === "dashboard_index.html") {
+            activeItem = document.getElementById("dashboard");
+            } else if (currentPage === "dashboard_score.html") {
+            activeItem = document.getElementById("depression-score");
+            } else if (currentPage === "dashboard_report.html") {
+            activeItem = document.getElementById("report");
+            } else if (currentPage === "dashboard_activity.html") {
+            activeItem = document.getElementById("activity");
+            }
+
+            if (activeItem) {
+            activeItem.classList.add("active");
+            }
+        });
+        
+    </script>
+    <!-- Main Container -->
+    <div class="flex mt-20 ml-40 w-4/5 min-h-full">
+            <!-- Content Area -->
+            <div class="flex-1 p-6 relative overflow-hidden">
+                <!-- Content Wrapper -->
+                <div class="relative z-10 pl-10">
+                    <!-- Web Score Section -->
+                    <div class="mb-4">
+                        <h2 class="text-3xl font-bold">Web Score</h2>
+                        
+                        <div class="flex items-center">
+                            <!-- Left Arrow -->
+                            <button class="p-2 rounded-full mr-4" style="background-color: #a7d7de;">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            
+                            <!-- Report Cards -->
+                            <div class="flex space-x-4 overflow-x-auto">
+                                <div class="flex space-x-4 overflow-x-auto" id="weekly-report-container"></div>
+                            </div>
+                             
+                            <!-- Right Arrow -->
+                            <button class="p-2 rounded-full ml-4" style="background-color: #a7d7de;">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Extension Score Section -->
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">Extension Score</h2>
+                        
+                        <div class="flex items-center">
+                            <!-- Left Arrow -->
+                            <button class="p-2 rounded-full mr-4" style="background-color: #a7d7de;">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            
+                            <!-- Report Cards -->
+                            <div class="flex space-x-4 overflow-x-auto">
+
+                                <div class="report flex space-x-4 overflow-x-auto" id="daily-report-container"></div>
+                            </div>
+                            
+                            <!-- Right Arrow -->
+                            <button class="p-2 rounded-full ml-4" style="background-color: #a7d7de;">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../JAVASCRIPT/script.js"></script>
+    <script type="module" src="../JAVASCRIPT/d_script.js"></script>
+    <script type="module" src="./fetch_dashboard.js"></script>
+</body>
+</html>

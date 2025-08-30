@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Page</title>
+    <!-- Include Tailwind CSS for the navbar -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            padding-top: 90px; /* Added to prevent content from hiding behind fixed navbar */
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        .activity-section {
+            display: flex;
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .content {
+            flex: 1;
+            padding: 25px;
+        }
+        
+        .content h1 {
+            color:black;
+            margin-bottom:20px;
+            font-size: 2.5rem; 
+            font-weight: bold;
+        }
+        
+        .content p {
+            line-height: 1.6;
+        }
+        .content ul {
+            list-style-type: disc; /* Standard bullet points */
+            padding-left: 20px; /* Indent the list */
+            margin-bottom: 10px;
+        }
+
+        .content li {
+             margin-bottom: 8px;
+        }
+        
+        .gif-container {
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        
+        .gif-container img {
+            width: 100%;
+            height: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .activity-section {
+                flex-direction: column;
+            }
+            
+            .gif-container {
+                width: 100%;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div> <!-- Navbar Placeholder -->
+    <script>
+        // Include Navbar
+fetch('./navbar.html')
+
+            .then(response => response.text())
+            .then(data => document.getElementById("navbar").innerHTML = data);
+    </script>
+
+    <div class="container">
+        <!-- Running Activity -->
+        <section class="activity-section">
+            <div class="content">
+                <h1>Running</h1>
+                <ul>
+                    <li><h3><B>Improves Cardiovascular Health:</B></h3>Running strengthens your heart, lowers blood pressure, and helps improve blood circulation, reducing the risk of heart disease.</li><br>
+                    <li><h3><B>Boosts Mental Health:</B></h3>Running releases endorphins, which can reduce stress, anxiety, and depression, promoting a positive mood and better mental clarity.</li><br>
+                    <li><h3><B>Enhances Physical Fitness:</B></h3>Regular running builds endurance, increases muscle tone, and helps with weight management by burning calories and improving metabolism.</li>
+                </ul>
+            </div>
+            <div class="gif-container">
+                <img src="../Images/run.gif" alt="Running Gif">
+            </div>
+        </section>
+        
+        <!-- dIARY Activity -->
+        <section class="activity-section">
+            <div class="gif-container">
+                <img src="../Images/writing.gif" alt="Swimming Gif">
+            </div>
+            <div class="content">
+                <h1>MY DIARY</h1>
+                <ul>
+                    <li><h3><B>Emotional Venting:</B></h3>Writing thoughts and feelings in a diary provides a safe outlet to release bottled-up emotions, reducing emotional burden and mental clutter.</li><br>
+                    <li><h3><B>Self-Reflection & Clarity:</B></h3>It helps you understand your thoughts, recognize patterns in mood or behavior, and gain clarity on what triggers sadness or stress.</li><br>
+                    <li><h3><B>Tracking Progress & Positivity:</B></h3>Documenting small wins, happy moments, or gratitude entries can shift focus toward the positive, helping build a hopeful mindset over time.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Yoga Activity -->
+        <section class="activity-section">
+            <div class="content">
+                <h1>Yoga and Meditation</h1>
+                <ul>
+                    <li><h3><B>Improves Flexibility & Strength:</B></h3>Yoga enhances physical strength, balance, and flexibility through various postures and stretches.</li><br>
+                    <li><h3><B>Reduces Stress & Anxiety:</B></h3>It promotes mental relaxation through deep breathing and mindfulness, helping to calm the nervous system.</li><br>
+                    <li><h3><B>Boosts Overall Health:</B></h3>Regular yoga practice can improve posture, digestion, sleep quality, and immunity, supporting overall well-being.</li>
+                </ul>
+            </div>
+            <div class="gif-container">
+                <img src="../Images/meditation.gif" alt="Yoga Gif">
+            </div>
+        </section>
+        <!--- communicating-->
+        <section class="activity-section">
+            <div class="gif-container">
+                <img src="../Images/communication.gif" alt="Swimming Gif">
+            </div>
+            <div class="content">
+                <h1>Conversations from the Heart</h1>
+                <ul>
+                    <li><h3><B>Emotional Support & Validation:</B></h3>Sharing feelings with someone you trust can provide comfort, understanding, and a sense of being heard, which eases emotional pain.</li><br>
+                    <li><h3><B>Reduces Feelings of Isolation:</B></h3>Regular conversations help combat loneliness, making you feel connected and less alone in your struggles.</li><br>
+                    <li><h3><B>Gain Perspective & Encouragement:</B></h3>A trusted person can offer helpful advice, a fresh perspective, or simply remind you of your strengths and worth during tough times.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // JavaScript for dropdown functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const profileIcon = document.getElementById('profileIconContainer');
+            const profileDropdown = document.getElementById('profileDropdown');
+            const toggleBtn = document.getElementById('toggleBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            profileIcon.addEventListener('click', function() {
+                profileDropdown.classList.toggle('show');
+                if (mobileMenu.classList.contains('show')) {
+                    mobileMenu.classList.remove('show');
+                }
+            });
+
+            toggleBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('show');
+                if (profileDropdown.classList.contains('show')) {
+                    profileDropdown.classList.remove('show');
+                }
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!profileIcon.contains(event.target) && !profileDropdown.contains(event.target)) {
+                    profileDropdown.classList.remove('show');
+                }
+                if (!toggleBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
+    <script src="../JAVASCRIPT/script.js"></script>
+</body>
+</html>
