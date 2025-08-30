@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2? family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#Logintab {
+    margin-left: 6pc;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contact {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: -30px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url(../Images/Contactpage.jpg);
+    background-size: cover;
+}
+
+.contact .contentcontact {
+    max-width: 800px;
+    text-align: center;
+}
+
+.contact .contentcontact h2 {
+    font-size: 60px;
+    font-weight: 500;
+    color: #090909;
+}
+
+.contact .contentcontact p {
+    font-weight: 300;
+    color: #055d54;
+    font-size: 25px;
+    margin-top: -50;
+}
+
+.containercontact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.containercontact.contactInfo {
+    width: 50%;
+    display: flex;
+    margin-top: -10px;
+    flex-direction: column;
+}
+
+.containercontact .contactInfo .box {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+
+.containercontact .contactInfo .box .icon {
+    min-width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-top: -20px;
+}
+
+.containercontact .contactInfo .box .text p {
+    display: flex;
+    margin-left: 15px;
+    font-size: 20px;
+    color: #055d54(255, 255, 255);
+    flex-direction: column;
+    font-weight: 300;
+}
+
+.containercontact .contactInfo .box .text h3 {
+    font-weight: 500;
+    color: #055d54;
+    margin-left: 25px;
+    font-size: 25px;
+    margin-top: -10px;
+}
+
+.contactform {
+    width: 30%;
+    padding: 40px;
+    background: #fff;
+}
+
+.contactform h2 {
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
+}
+
+.contactform .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.contactform .inputBox input,
+.contactform .inputBox textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid#333;
+    outline: none;
+    resize: none;
+}
+
+.contactform .inputBox span {
+    position: absolute;
+    left: 0;
+    bottom: auto;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+.contactform .inputBox input:focus~span,
+.contactform .inputBox textarea:focus~span {
+    color: #e91e63;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.contactform .inputBox input:valid~span,
+.contactform .inputBox textarea:valid~span {
+    color: #0000aa;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+.contactform .button{
+    margin-top: 40px;
+}
+
+.contactform .button a {
+    width: 100px;
+    background: #3d3d3d;
+    color: #fff;
+    border: none;
+    text-decoration:none ;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 1.5;
+}
+
+.contactform .button a:hover{
+    background-color: #055d54;
+    color: #fff;
+}
+
+
+
+@media (max-width: 991px) {
+    .contact {
+        padding: 50px;
+    }
+
+    .containercontact {
+        flex-direction: column;
+    }
+
+    .containercontact .contactInfo {
+        margin-bottom: 40px;
+    }
+
+    .contact .contactInfo,
+    .contactform {
+        width: 100%;
+    }
+}
+
+.section{
+width: 100%;
+min-height: 100vh;
+background-color: #ddd;
+}
+.container{
+width: 80%;
+display: block;
+margin: auto;
+padding-top:100px;
+}
+.content-section{
+float: left;
+width: 55%;
+}
+.image-section{
+float: right;
+width:40%;
+}
+.image-section img{
+width: 100%;
+height: auto;
+}
+.content-section .title{
+text-transform: uppercase;
+font-size: 28px;
+}
+.content-section .content h3{
+margin-top: 20px;
+color:#055d54;
+font-size: 25px;
+}
+.content-section .content p{
+margin-top: 10px;
+font-family: sans-serif;
+line-height:1.5;
+font-size:20px;
+}
+.content-section .content .button{
+margin-top:30px;
+}
+.container.social-section{
+float: left;
+}
+.content-section .content .button a{
+background-color: #3d3d3d;
+padding: 12px 40px;
+text-decoration: none;
+color: #fff;
+font-size: 25px;
+letter-spacing: 1.5px;
+}
+.content-section .content .button a:hover{
+background-color: #a52a2a;
+color:#fff;
+}
+.content-section .social{
+margin: 40px 40px;
+}
+.content-section .social i{
+color:#a52a2a;
+font-size: 30px;
+padding:0px 10px;
+}
+.content-section .social i:hover{
+color: #3d3d3d;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Depression</title>
+    <link rel="icon" href="../Images/logo.png" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../CSS/aboutstyles.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar"></div> 
+    <script>
+        // Include Navbar
+fetch('./navbar.html')
+
+            .then(response => response.text())
+            .then(data => document.getElementById("navbar").innerHTML = data);
+    </script>
+
+    <!-- Content Section -->
+   
+    <section class="about-depression">
+        <h1>About Depression</h1>
+        <div class="content-container">
+            <!-- Left Side: Text -->
+            
+            <div class="text-content">
+                
+                <p>
+                    Depression is a serious and common medical psychological condition that 
+                    affects the way you think, feel, and act. It interferes with your abilities 
+                    and makes it difficult to do your everyday tasks.
+                </p>
+                <p>
+                    Many things influence it, Changes in the brain, like chemical imbalances, can contribute Hormones and genetics also play a part. Depression is not just one thing— it's a mix of factors from our bodies, minds, and lives. Understanding all these parts helps us understand and treat depression better.
+                </p>
+                <!-- Know More Button -->
+                <a class="know-more-btn" href="#">Know More</a>
+            </div>
+
+            <!-- Right Side: Image -->
+            <div class="image-content">
+                <img src="../Images/symptoms.png" alt="Symptoms of Depression" class="symptoms-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Tests Section -->
+    <section id="tests" class="tests-section">
+        <div class="test">
+            <h2>Test 1: Rating Test</h2>
+            <p>This test uses a numerical scale to assess the severity of depression symptoms based on predefined questions about mood, energy, sleep, and interest in activities. It provides a quick and quantifiable overview of the user's mental health.</p>
+        </div>
+        <div class="test">
+            <h2>Test 2: Questionnaire</h2>
+            <p>Open-ended questions are analyzed using natural language processing (NLP) to detect patterns, emotions, and keywords indicative of depression. This approach offers deeper insights by examining the user's expressive thoughts and feelings.</p>
+        </div>
+        <div class="test">
+            <h2>Test 3: Thematic Apperception Test (TAT)</h2>
+            <p>
+                Users interpret ambiguous images or tell stories about them, revealing subconscious emotions and thought patterns. It helps uncover hidden concerns or unresolved conflicts, offering a unique perspective on mental well-being.</p>
+        </div>
+        
+    </section>
+
+    <!-- Start Test Button -->
+    <div class="button">
+        <a class="start-test-btn" onclick="openPopup()">Start Test</a>
+    </div>
+
+    <div id="popup-overlay" class="popup-overlay" style="display: none;">
+        <div class="condition-popup">
+            <div id="content1" class="popup-content visible" style="margin-right: 10px; margin-left: 10px;">
+                <h2>DEPRESSION TEST</h2>
+                <p>By clicking "I Agree" below you acknowledge that this is not a diagnostic instrument and is only to be used by you if you are 18 years or older. You agree that this application is for information purposes only and is not intended to replace a consultation with your doctor or a mental health professional. Healing Neuro disclaim any liability, loss, or risk incurred as a consequence, directly or indirectly, from the use and application of this test. If you are in need of immediate assistance, please dial 911 or your local equivalent.</p>
+                <hr style="width: 100%; margin: 20px auto; border: 0.5px solid #ddd;">
+                <button class="agree-button" onclick="get_status()">I AGREE</button>
+            </div>
+            <div id="content2" class="popup-content hidden" style="margin-right: 60px; margin-left: 60px;">
+                <h2>DEPRESSION TEST</h2>
+                <p>Thinking about the past 2 weeks, to what extent have you found the following things a problem? Tap “Continue” to start.</p>
+                <hr style="width: 100%; margin: 20px auto; border: 0.5px solid #ddd;">
+                <button class="continue-button" type="button" onclick="redirectToSession()">CONTINUE</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../JAVASCRIPT/aboutscript.js"></script>
+    <script type="module" src="../JAVASCRIPT/script.js" defer></script>
+
+</body>
+</html>

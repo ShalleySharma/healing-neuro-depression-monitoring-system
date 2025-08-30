@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/counselling.css">
+    <link rel="icon" href="../Images/logo.png" >
+    <title>HealingNeuro: A Depression Monitoring System</title>
+    <!-- font link -->
+</head>
+<body>
+    <div id="navbar"></div> <!-- Navbar Placeholder -->
+    <script>
+        // Include Navbar
+            fetch('navbar.html') 
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data);
+    </script>
+
+<div class="container">  
+    <div class="Counselor_heading">
+        <div class="quote">
+            <h2>Healing starts with the right support. Our trusted, licensed therapists are ready to guide you. Not sure who to choose? Let us help you find the perfect fit!</h2>
+            <button class="recommendation">Get a Recommendation</button>
+        </div> 
+        <div class="quote_pic">
+            <img src="../Images/monitor_element.png" alt="therapy image">
+
+        </div>
+
+    </div>
+    <div class="filter">
+        <h5 class="title">Filters</h5>
+        <div class="datepicker-container">
+            <!-- input -->
+            <input type="text" class="date-input" placeholder="Select date">
+            
+            <div class="datepicker" hidden>
+                <!-- datepicker-header -->
+                <div class="datepicker-header">
+                    <button class="prev">Prev</button>
+                    <div>
+                        <select class="month-input">
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                        <input type="number" class="year-input" value="2025">
+                    </div>
+                    <button class="next">Next</button>
+                 </div>
+                <!-- days -->
+                <div class="days">
+                    <span>Sun</span>
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span> Fri</span>
+                    <span> Sat</span>
+                </div>
+                <!-- dates -->
+                <div class="dates"></div>
+                <!-- datepicker-footer -->
+                <div class="datepicker-footer">
+                    <button class="cancel">Cancel</button>
+                    <button class="apply">Apply</button>
+                </div>
+            </div>
+
+            <!-- timming slot -->
+            <select class="time-input">
+                <option>Select a slot</option>
+                <option>7AM-11AM</option>
+                <option>11AM-3PM</option>
+                <option>3PM-7PM</option>
+                <option>7PM-11PM</option>
+                <option>11PM-3AM</option>
+                <option>3AM-7AM</option>
+            </select>
+            <!-- Specialization input -->
+            <div class="specialization">
+                <div class="select-option">
+                    <input type="text" placeholder="Select" id="soValue" readonly name="">
+                </div>
+                <div class="dp_content">
+                    <div class="search">
+                        <input type="text" id="optionSearch" placeholder="Search" name="">
+                    </div>
+                    <ul class="options">
+                        <li>Not Sure</li>
+                        <li>Anxiety</li>
+                        <li>Depression</li>
+                        <li>Relationship Issues</li>
+                        <li>Couple Counselling</li>
+                        <li>Sexual Issues</li>
+                        <li>Suicidal Ideation</li>
+                        <li>OCD</li>
+                        <li>Grief & Loss</li>
+                        <li>Bipolar Disorder</li>
+                        <li>Psychosis</li>
+                        <li>Sleep Issues</li>
+                        <li>Cognitive Rehabilitation</li>
+                        <li>Trauma</li>
+                        <li>Narcissistic Abuse</li>
+                        <li>ADHD(Adult)</li>
+                        <li>ADHD(Child)</li>
+                        <li>Autism Spectrum Disorders</li>
+                        <li>Family Therapy</li>
+                        <li>Self-harm</li>
+                        <li>Body Image</li>
+                        <li>Self Confidence</li>
+                        <li>Anger</li>
+                        <li>Pain Management</li>
+                        <li>Psycho-Samatic Disorders</li>
+                        <li>LGBTQI</li>
+                        <li>Psycho-Oncology</li>
+                        <li>Phobia</li>
+                        <li>Child Counselling</li>
+                        <li>Geriatric Issues</li>
+                        <li>Family Therapy</li>
+                        <li>Career Counseling</li>
+                        <li>Martial Disorder</li>
+                        <li>Eating Disorder</li>
+                        <li>Stress</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- LANGUAGE INPUT -->
+            <select class="language-input">
+                <option>Language</option>
+                <option>Hindi</option>
+                <option>English</option>
+            </select>
+            <div class="search_filter">
+                <input type="text" placeholder="Search" >
+                <i class="search-icon">&#x1F50E;&#xFE0E;</i>
+            </div>
+            <div class="reset_filter">
+                <button class="reset">Reset filter</button>    
+            </div>    
+        </div> 
+    </div>
+ 
+    <div class="products-container">
+        <div class="product" data-name="p-1">
+            <i class="fas fa-times"></i>
+            <img src="../Images/expert7.jpg" alt="Female expert">
+            <h3>Devika Irny</h3>
+            <div class="price">MBBS, MD (Psychiatry)</div>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>( 20 )</span>
+            </div>
+            <p>Anxiety, Depression, Stress, Relationship Issues, Sleep Issues , Self Confidence</p>
+            <div class="buttons">
+                <a href="booking.html?id=1" class="view">View Profile</a>
+                <a href="#" class="book">Book Now</a>
+            </div>
+        </div>
+ 
+        <div class="product" data-name="p-2">
+            <i class="fas fa-times"></i>
+            <img src="../Images/expert6.jpg" alt="Female expert">
+            <h3>Harshita Murai</h3>
+            <div class="price">M.Phil in Psychology (Gold Medalist)</div>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>( 15 )</span>
+            </div>
+            <p>Sleep Issues, Phobia, Sexual Issues, Depression, Anxiety , Stress, OCD, Bipolar Disorder, Geriatric Issues</p>
+            <div class="buttons">
+                <a href="booking.html?id=2" class="view">View Profile</a>
+                <a href="#" class="book">Book Now</a>
+            </div>
+        </div>
+ 
+        <div class="product" data-name="p-3">
+            <i class="fas fa-times"></i>
+            <img src="../Images/expert4.jpg" alt="Male expert">
+            <h3>Ritam Dubey</h3>
+            <div class="price">MA in Clinical Psychology</div>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>( 25 )</span>
+            </div>
+            <p>Relationship Issues, Couple Counseling , Grief & Loss, Family Therapy, Body Image, Self Confidence, Psycho-Oncology, Geriatric Issues, Marital Discord</p>
+            <div class="buttons">
+               <a href="booking.html?id=3" class="view">View Profile</a>
+               <a href="#" class="book">Book Now</a>
+            </div>
+        </div>
+ 
+        <div class="product" data-name="p-4">
+            <i class="fas fa-times"></i>
+            <img src="../Images/expert2.jpg" alt="Male expert">
+            <h3>Ujwal sangawar</h3>
+            <div class="price">MSc in Clinical Psychology</div>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>( 12 )</span>
+            </div>
+            <p>Stress, Anxiety, Depression, Psychosis, Sleep Issues, Family Therapy, Narcissistic Abuse, Body Image, Self Confidence, Anger, LGBTQI, Phobia, Bipolar Disorder</p>
+            <div class="buttons">
+                <a href="booking.html?id=4" class="view">View Profile</a>
+                <a href="#" class="book">Book Now</a>
+            </div>
+        </div>
+ 
+        <div class="product" data-name="p-5">
+            <i class="fas fa-times"></i>
+            <img src="../Images/expert1.jpg" alt="Male expert">
+            <h3>Dr. V S Ananthakrishnan</h3>
+            <div class="price">MA in Clinical Psychology</div>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>( 18 )</span>
+            </div>
+            <p>Anxiety, Depression, Stress, Grief & Loss , Sleep Issues, Self-harm,Self Confidence, Body Image, Anger, Phobia, Career Counselling, Sleep Issues, OCD, Narcissistic Abuse</p>
+            <div class="buttons">
+                <a href="booking.html?id=5" class="view">View Profile</a>
+                <a href="#" class="book">Book Now</a>
+            </div>
+        </div>
+ 
+        <div class="product" data-name="p-6">
+            <i class="fas fa-times"></i>
+            <img src="../Images/expert3.jpg" alt="Female expert">
+            <h3>Niharika Kamath</h3>
+            <div class="price">MSc in Clinical Psychology</div>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>( 8 )</span>
+            </div>
+            <p>Anxiety, Depression, Relationship Issues, Suicidal Ideation, Grief & Loss , Trauma, Self-harm, LGBTQI, Self Confidence, Body</p>
+            <div class="buttons">
+                <a href="booking.html?id=6" class="view">View Profile</a>
+                <a href="#" class="book">Book Now</a>
+            </div>
+        </div>
+ 
+    </div>
+
+    <!-- hide conseltants -->
+    <div class="products-container2">
+ 
+        <div class="product" data-name="p-1">
+            <i class="fas fa-times"></i>
+            <img src="../Images/expert7.jpg" alt="Female expert">
+            <h3>Devika Irny</h3>
+            <div class="price">MBBS, MD (Psychiatry)</div>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>( 20 )</span>
+            </div>
+            <p>Anxiety, Depression, Stress, Relationship Issues, Sleep Issues , Self Confidence</p>
+            <div class="buttons">
+                <a href="#" class="view">View Profile</a>
+                <a href="#" class="book">Book Now</a>
+            </div>
+        </div>
+ 
+        <div class="product" data-name="p-2">
+            <i class="fas fa-times"></i>
+            <img src="../Images/expert6.jpg" alt="Female expert">
+            <h3>Harshita Murai</h3>
+            <div class="price">M.Phil in Psychology (Gold Medalist)</div>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>( 15 )</span>
+            </div>
+            <p>Sleep Issues, Phobia, Sexual Issues, Depression, Anxiety , Stress, OCD, Bipolar Disorder, Geriatric Issues</p>
+            <div class="buttons">
+                <a href="#" class="view">View Profile</a>
+                <a href="#" class="book">Book Now</a>
+            </div>
+        </div>
+ 
+        <div class="product" data-name="p-3">
+            <i class="fas fa-times"></i>
+            <img src="../Images/expert4.jpg" alt="Male expert">
+            <h3>Ritam Dubey</h3>
+            <div class="price">MA in Clinical Psychology</div>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>( 25 )</span>
+            </div>
+            <p>Relationship Issues, Couple Counseling , Grief & Loss, Family Therapy, Body Image, Self Confidence, Psycho-Oncology, Geriatric Issues, Marital Discord</p>
+            <div class="buttons">
+               <a href="#" class="view">View Profile</a>
+               <a href="#" class="book">Book Now</a>
+            </div>
+        </div>
+ 
+        <div class="product" data-name="p-4">
+            <i class="fas fa-times"></i>
+            <img src="../Images/expert2.jpg" alt="Male expert">
+            <h3>Ujwal sangawar</h3>
+            <div class="price">MSc in Clinical Psychology</div>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>( 12 )</span>
+            </div>
+            <p>Stress, Anxiety, Depression, Psychosis, Sleep Issues, Family Therapy, Narcissistic Abuse, Body Image, Self Confidence, Anger, LGBTQI, Phobia, Bipolar Disorder</p>
+            <div class="buttons">
+                <a href="#" class="view">View Profile</a>
+                <a href="#" class="book">Book Now</a>
+            </div>
+        </div>
+ 
+        <div class="product" data-name="p-5">
+            <i class="fas fa-times"></i>
+            <img src="../Images/expert1.jpg" alt="Male expert">
+            <h3>Dr. V S Ananthakrishnan</h3>
+            <div class="price">MA in Clinical Psychology</div>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>( 18 )</span>
+            </div>
+            <p>Anxiety, Depression, Stress, Grief & Loss , Sleep Issues, Self-harm,Self Confidence, Body Image, Anger, Phobia, Career Counselling, Sleep Issues, OCD, Narcissistic Abuse</p>
+            <div class="buttons">
+                <a href="#" class="view">View Profile</a>
+                <a href="#" class="book">Book Now</a>
+            </div>
+        </div>
+ 
+        <div class="product" data-name="p-6">
+            <i class="fas fa-times"></i>
+            <img src="../Images/expert3.jpg" alt="Female expert">
+            <h3>Niharika Kamath</h3>
+            <div class="price">MSc in Clinical Psychology</div>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>( 8 )</span>
+            </div>
+            <p>Anxiety, Depression, Relationship Issues, Suicidal Ideation, Grief & Loss , Trauma, Self-harm, LGBTQI, Self Confidence, Body</p>
+            <div class="buttons">
+                <a href="#" class="view">View Profile</a>
+                <a href="#" class="book">Book Now</a>
+            </div>
+        </div>
+         
+    </div>
+    
+    <button class="more_counselor">Load more Counselors</button>
+    <button class="less_counselor" >Show less Counselors</button>
+ </div>
+    
+    <script src="../JAVASCRIPT/consscript.js" defer></script>
+    <script type="module" src="../JAVASCRIPT/script.js" defer></script>
+
+</body>
+</html>

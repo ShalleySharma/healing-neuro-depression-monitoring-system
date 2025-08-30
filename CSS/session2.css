@@ -1,0 +1,1609 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../Images/session_background.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.Title {  
+    position: fixed;    
+    top: 0;           
+    left: 0;           
+    width: 100%;     
+    z-index: 1000;   
+    text-align: center; 
+    margin-top: 26px;
+    padding: 10px 0;  
+    background-color: transparent;
+}  
+
+h1 {  
+    margin: 0; 
+    font-size: 52px; 
+    color: #984fff;  
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); 
+}
+
+.container {
+    background-color: #f9f8ff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.729);
+    padding: 20px;
+    height: 100%;
+    max-height: 65vh;
+    width: 86%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Progress bar styles */
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 1%;
+    margin-bottom: 50px;    
+    flex-wrap: nowrap;
+}
+
+.step {
+    font-size: 13px;
+    color: #7b7b7b; 
+    font-weight: bold;
+    margin-left: 0px;  
+    white-space: nowrap;  
+}
+
+.progress {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    max-width: 90%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.progress-fill {
+    background: linear-gradient(to right, #75d0df, #984fff);
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Heading styles */
+h2 {
+    font-size: 28px;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+
+.question-container{
+    background-color: #f9eebe;
+    border: 2px solid #fee989;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.168);
+    padding: 20px;
+    margin: -20px auto;;
+    width: 94%; 
+    height: 44vh;
+    text-align: center;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    display: flex; 
+    transition: all 0.001s ease;
+    transition: transform 0.001s ease-in-out;
+    overflow-x: auto; 
+    scrollbar-width: none;
+}
+
+.question-container::-webkit-scrollbar {
+    display: none; 
+}
+
+.question-slide {  
+    min-width: auto;           
+    height: 100%;           
+    display: block;
+    padding: 20px;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+}
+
+#question-text {
+    width: 100%;
+    font-family: 'Montserrat';
+    font-size: 28px;
+    font-weight: bolder;
+    text-align: center; 
+    max-width: 100%;
+    white-space: normal;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.input-container{
+    display:flex; 
+    flex-wrap: wrap;
+    font-weight: bold; 
+    flex-direction: row; 
+    align-items: center;
+    margin-top: 40px; 
+    gap: 20px;
+    justify-content: center;
+}
+
+.input-container.saved  {
+    background-color: initial; 
+    color: #00796b;
+    border-color: #00796b;
+}
+
+.input-container.saved textarea {
+    background-color: #d4edda; 
+    color: #00796b;
+}
+
+.input-container .tick-mark {
+    color: green;
+    font-size: 16px;
+    visibility: hidden;
+}
+
+.input-container.saved .tick-mark {
+    display: inline-block;
+    visibility: visible;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column; 
+    margin-top: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px; 
+}
+
+.save-button, .clear-button {
+    background-color: #4ac8db;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;   
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.clear-button {
+    background-color: #f68373;
+}
+
+.save-button:hover{
+    background-color: #30a8ba; 
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.clear-button:hover {
+    background-color: #f07565;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.textarea-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 80%; 
+    max-width: 900px;
+    margin-right: 10px;
+}
+
+textarea {
+    flex: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100px;
+    padding: 10px 40px 10px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: white;
+}
+
+textarea:focus {
+    outline: none;
+    border: 1px solid #4ac8db;
+    box-shadow: 0px 0px 5px rgba(74, 200, 219, 0.5);
+}
+
+.tick-mark {
+    position: absolute;
+    top: 50%; 
+    right: 25px; 
+    transform: translateY(-50%);
+    color: green;
+    visibility: hidden;
+}
+
+.input-container.saved .tick-mark {
+    display: inline-block;
+    visibility: visible;
+}
+
+.navigation {
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-between; 
+    padding: 0 20px;
+}
+
+.previous-question,
+.next-question {
+    font-size: 16px;
+    background: none;
+    border: none;
+    color: #2b6bb5;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.previous-question:hover,
+.next-question:hover {
+    font-size: 1.1rem;
+    transition: 100ms;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.17); 
+}
+
+.button {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    margin-top: 65px;       
+    width: 100%;            
+}
+
+.button a {
+    background-color: #FFD93D;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    display: inline-block;
+    font-weight: bold;
+    border: 2px solid #000;
+    border-radius: 25px;
+}
+
+.button a:hover {
+    background-color: #FFC107; 
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Style for the pop-up message */
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    padding: 20px;
+    width: 50%; 
+    height: 32%;
+    min-height: 30%;
+    max-width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 100;
+    text-align: center;
+    flex-wrap: wrap;
+    overflow: visible;
+}
+.popup img{
+    width: 80px; 
+    max-width: 100px;
+    display: block;
+    position: absolute;
+    top: -25px; 
+    left: 45%;
+    border-radius: 50%;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+
+.popup h2 {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.popup p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.popup button {
+    background-color: #2b6bb5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border-color: #2b6bb5;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 15px; 
+    flex-wrap: wrap;
+    flex-shrink: 1;
+}
+
+.cancel-button, .yes-button, .popup .continue-button{
+    width: 20%; 
+    height: auto; 
+    max-width: 100px;
+    padding: 0.5em 1em;
+}
+
+.popup button:hover {
+    background-color: #1e4a84;
+    border-radius: 5px; 
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 99;
+}
+
+.popup, .overlay {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+    
+.visible {
+    display: block;
+}
+    
+
+/* Mobile responsiveness */
+@media (min-width: 1050px) and (max-width: 1270px) {
+
+    .h1{
+        font-size: 50px;    }
+    
+    #question-text{
+        font-size: 25.5px;
+    }
+
+    textarea{
+        width: 100%;
+        height: 120px;
+    }
+       
+    .popup-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 50px; 
+    }
+
+    .popup-container a {
+        font-size: 16px; 
+    }
+
+    .popup{
+        height: 33%;
+    }
+
+    .cancel-button, .yes-button, .popup .continue-button{
+        width: 25%;
+        height: auto;
+    }
+
+    .popup-container{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+}
+
+@media (max-width: 1059px) {
+
+    .h1{
+        font-size: 49px;
+    }
+
+    #question-text{
+        font-size: 24.5px;
+    }
+
+    textarea{
+        font-size: 15.5px;
+        height: 115px;
+    }
+
+    .popup{
+        height: 33%;
+    }
+
+    .popup img{
+        left: 43%;
+    }
+
+    .popup h2 {
+        font-size: 1.25rem; 
+    }
+
+    .popup p {
+        font-size: 0.9rem; 
+    }
+
+    .popup .cancel-button, .popup .yes-button, .popup .continue-button{
+        width: 24%; 
+        height: auto;
+        padding: 12px 11px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.95rem;
+        
+    }
+
+    .popup-container {
+        gap: 10px; 
+    }
+}
+
+@media (max-width: 990px) {
+    
+    #question-text{
+        font-size: 23.4px;     
+    }
+
+    .step {
+        font-size: 12px;      
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 22%; 
+        height: auto;
+        padding: 10px 12px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        
+    }
+
+    .popup .continue-button{
+        width: 32%; 
+        height: auto;
+        padding: 10px 12px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        
+    }
+
+    .popup img{
+        width: 70px; 
+        left: 44%;
+    }
+
+    .popup-container {
+        gap: 10px; 
+    }
+}
+
+@media (max-width: 876px) {
+    .container {
+        max-width: 90%;
+        padding: 15px;
+        height: 100%;
+        
+    }
+
+    .input-container{
+        margin-top: 35px;
+    }
+
+    .question-container{       
+        width: 92%; 
+        height: 75.5%;
+    }
+
+    .Title h1 {
+        margin-top: 10px;
+        font-size: 40px;
+    }
+
+    #question-text{
+        font-size: 22.8px;
+    }
+
+    textarea{
+        font-size: 15px;
+        height: 125px;
+    }
+
+    .navigation{
+        padding: 10px;
+        margin-top: 30px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 16px;
+    }
+
+    .button a {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    #popup .content {
+        margin: 20px;
+    }
+
+    .progress {
+        width: 82%;
+        height: 8px;
+    }
+
+    .save-button, .clear-button {
+        padding: 7px 14px;   
+        font-size: 13px;
+    }
+
+    .popup {
+        width: 50%; 
+        padding: 15px; 
+        height: 32%;
+    }
+
+    .popup img {
+        width: 60px; 
+        top: -30px; 
+    }
+
+    .popup h2 {
+        font-size: 1.2rem; 
+        margin-top: auto;
+    }
+
+    .popup p {
+        font-size: 0.9rem; 
+    }
+
+    .popup .cancel-button, .popup .yes-button, .popup .continue-button{
+        width: 89px; 
+        height: 35px;
+        padding: 5px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        
+    }   
+
+    .popup-container {
+        gap: 10px; 
+    }
+
+}
+
+@media (max-width: 746px) {
+    .Title h1 {
+        font-size: 39px;
+    }
+
+    #question-text{
+        font-size: 22.4px;
+        margin-top: -5px;
+    }
+
+    .textarea-wrapper{
+        width: 75%;
+    }
+
+    textarea{
+        width: 100%;
+        height: 135px;
+        font-size: 14.5px;
+    }
+
+    .button a {
+        font-size: 17.8px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 15.8px;
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 24%; 
+        height: auto;
+        padding: 10px 12px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+    }  
+    
+    .popup .continue-button{
+        width: 38%; 
+        height: auto;
+        padding: 10px 12px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+    }  
+    
+
+    .popup img{
+        left: 43%;
+    }
+}
+
+@media (max-width: 708px) {
+    .Title h1 {
+        font-size: 37px;
+    }
+
+    #question-text{
+        font-size: 22px;
+        margin-top: -8px;
+    }
+
+    .textarea-wrapper{
+        width: 100%;
+    }
+
+    textarea{
+        height: 115px;
+        font-size: 14px;
+    }
+
+    .button-container{
+        flex-direction: row; 
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .save-button, .clear-button {
+        padding: 7px 14px;   
+        font-size: 12px;
+    }
+
+    .button a {
+        font-size: 17.2px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 15.2px;
+    }
+
+    .popup h2 {
+        font-size: 1.1rem; 
+        margin-top: auto;
+    }
+
+    .popup p {
+        font-size: 0.8rem; 
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 25%; 
+        height: auto;
+        padding: 10px 12px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+    }
+    
+    .popup .continue-button{
+        width: 40%; 
+        height: auto;
+        padding: 10px 12px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+    }   
+
+    .popup{
+        height: 31%;
+    }
+}
+
+@media (max-width: 685px) {
+    .button a {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    #question-text{
+        font-size: 21.5px;
+        margin-top: -10px;
+    }
+
+    .Title h1 {
+        font-size: 36px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 15px;
+    }
+
+    .popup{
+        height: 31%;
+    }
+
+    .popup h2{
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 664px) {
+    .Title h1 {
+        font-size: 35px;
+    }
+
+    #question-text{
+        font-size: 20.5px;
+        margin-top: -12px;
+    }
+
+    textarea{
+        height: 120px;
+        font-size: 14px;
+        margin-top: -5px;
+    }
+
+    .save-button, .clear-button {
+        padding: 6px 15px;   
+        font-size: 12px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 14.8px;
+    }
+
+    .popup{
+        height: 30%;
+    }
+
+    .popup p {
+        font-size: 0.7rem; 
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 25%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+    }  
+
+    .popup .continue-button{
+        width: 50%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+    }  
+
+}
+
+@media (max-width: 614px) {  
+
+    .Title h1 {
+        font-size: 29px;
+    }
+
+    #question-text{
+        font-size: 20px;
+        margin-top: -10px;
+    }
+
+    .navigation{
+        margin-top: 35px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 13.5px;
+    }
+
+    .popup img{
+        left: 42%;
+    }
+}
+
+@media (max-width: 590px) {
+
+    .popup{
+        height: 25%;
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 28%;
+        height: auto;
+    }
+
+    .popup .continue-button{
+        width: 50%; 
+        height: auto;
+        font-size: 0.7rem;
+    }  
+
+    .popup h2 {
+        font-size: 0.8rem; 
+    }
+
+    .popup p {
+        font-size: 0.65rem; 
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    #question-text{
+        margin-top: -12px;
+    }
+
+    textarea{
+        height: 110px;
+        font-size: 12.5px;
+        margin-top: -10px;
+    }
+
+    .save-button, .clear-button {
+        padding: 5px 12px;   
+        font-size: 11px;
+    }
+
+    .popup{
+        height: 31%;
+    }
+
+    .popup p {
+        font-size: 0.65rem; 
+    }
+
+}
+
+@media (max-width: 530px) {
+
+    .Title h1 {
+        font-size: 27px;
+    }
+
+    #question-text{
+        font-size: 18.5px;
+        margin-top: -15px;
+    }
+
+    .navigation{
+        padding: 9px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 13px;
+    }
+
+    .button a {
+        font-size: 14.5px;
+        padding: 8px;
+    }
+
+    #popup .content {
+        margin: 15px;
+    }
+
+    .step {
+        font-size: 10px;
+    }
+
+    .popup p {
+        font-size: 0.7rem; 
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 30%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65rem;
+    } 
+    
+    .popup .continue-button{
+        width: 55%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65rem;
+    } 
+
+    .popup img{
+        left: 41%;
+    }
+
+}
+
+@media (max-width: 510px){
+
+    textarea{
+        height: 125px;
+        font-size: 12.2px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 13px;
+    }
+
+    .button a {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 494px) {
+
+    .previous-question, .next-question{
+        font-size: 12.5px;
+    }
+
+    .button a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .popup{
+        height: 30%;
+    }
+
+    .popup p {
+        font-size: 0.65rem; 
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 30%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.6rem;
+    }  
+
+    .popup .continue-button{
+        width: 60%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.6rem;
+    } 
+}
+
+@media (max-width: 480px){
+
+    .Title h1 {
+        font-size: 25px;
+    }
+
+    #question-text{
+        font-size: 18px;
+    }
+
+    textarea{
+        font-size: 12px;
+        width: 105%;
+    }
+
+    .tick-mark{
+        left: 90%;
+    }
+
+    .navigation{
+        padding: 9px;
+        margin-top: 40px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 13px;
+    }
+
+    .button a {
+        font-size: 13.5px;
+        padding: 8px;
+    }
+
+    #popup .content {
+        margin: 15px;
+    }
+
+    .step {
+        font-size: 10px;
+    }
+
+    .popup{
+        height: 31%;
+    }
+
+    .popup h2{
+        font-size: 0.8rem; 
+    }
+
+    .popup img{
+        width: 60px;
+        left: 38%;
+    }
+
+    .popup p {
+        font-size: 0.6rem; 
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 30%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.6rem;
+    } 
+
+    .popup .continue-button{
+        width: 60%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.6rem;
+    } 
+}
+
+@media (max-width: 460px) {
+    #question-text{       
+        font-size: 17.5px;
+    }
+
+    textarea{
+        height: 130px;
+    }
+
+    .button-container{
+        margin-top: auto;
+        gap: 8px;
+    }
+
+    .save-button, .clear-button {
+        padding: 5px 11px;   
+        font-size: 10px;
+    }
+
+    .navigation{
+        padding: 9px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 13px;
+    }
+
+    .button a {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .popup{
+        height: 30%;
+    }
+
+    .popup h2{
+        font-size: 0.7rem; 
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 33%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.55rem;
+    } 
+
+    .popup .continue-button{
+        width: 60%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.55rem;
+    } 
+}
+
+@media (max-width: 448px) {
+    #question-text{
+        font-size: 17px;
+    }
+
+    .navigation{
+        padding: 9px;
+    }
+
+    .button a {
+        font-size: 13px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 427px) {
+    #question-text{
+        font-size: 16.5px;
+    }
+
+    .navigation{
+        padding: 9px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 12px;
+    }
+
+    .button a {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .popup{
+        height: 30%;
+    }
+
+    .popup h2{
+        font-size: 0.7rem;
+    }
+
+    .popup p{
+        font-size: 0.58rem;
+        margin-top: -5px;
+    }
+
+    .popup .continue-button{
+        width: 60%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.55rem;
+    } 
+}
+
+@media (max-width: 416px) {
+    #question-text{
+        font-size: 16px;
+    }
+
+    textarea{
+        font-size: 12px;
+    }
+
+    .navigation{
+        padding: 9px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 12px;
+    }
+
+    .button a {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .popup{
+        height: 32%;
+    }
+
+    .popup h2{
+        font-size: 0.7rem;
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 35%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.55rem;
+    } 
+
+    .popup .continue-button{
+        width: 60%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.55rem;
+    } 
+}
+
+@media (max-width: 390px) {
+    .Title h1 {
+        font-size: 21px;
+    }
+
+    #question-text{
+        font-size: 15px;
+    }
+
+    textarea{
+        margin-top: -5px;
+        width: 104%;
+    }
+
+    .tick-mark{
+        left: 88%;
+    }
+
+    .navigation{
+        padding: 9px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 11px;
+    }
+
+    .button a {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .step {
+        font-size: 9px;
+        padding-left: 10px;
+    }
+
+    .progress-bar{
+        margin-left: -10px;
+    }
+
+    .popup{
+        height: 25%;
+    }
+
+    .popup h2{
+        font-size: 0.72rem;
+    }
+
+    .popup img{
+        width: 50px;
+        top: -20px;
+        left: 38%;
+    }
+
+    .popup p{
+        font-size: 0.53rem;
+        margin-top: -8px;
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 37%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.52rem;
+    } 
+
+    .popup .continue-button{
+        width: 60%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.52rem;
+    } 
+}
+
+@media (max-width: 360px) {
+
+    .Title h1 {
+        font-size: 20px;
+    }
+
+    textarea{
+        height: 125px;
+        margin-top: -8px;
+        font-size: 11.9px;
+        width: 103%;
+    }
+
+    .tick-mark{
+        left: 85%;
+    }
+
+    .button-container{
+        gap: 6px;
+    }
+
+    .save-button, .clear-button {
+        padding: 5px 10px;   
+        font-size: 9px;
+    }
+
+    #question-text{
+        font-size: 15px;
+    }
+
+    .popup{
+        height: 29%;
+    }
+
+    .popup h2{
+        font-size: 0.7rem;
+    }
+
+    .popup p{
+        font-size: 0.52rem;
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 37%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.5rem;
+    } 
+
+    .popup .continue-button{
+        width: 70%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.5rem;
+    } 
+}
+
+@media (max-width: 345px) {
+
+    .Title h1 {
+        font-size: 19px;
+    }
+
+    textarea{
+        margin-top: -10px;
+        font-size: 11.8px;
+        width: 102%;
+    }
+
+    #question-text{
+        font-size: 14.5px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 10px;
+    }
+
+    .popup{
+        height: 29%;
+    }
+
+    .popup h2{
+        font-size: 0.68rem;
+    }
+
+    .popup p{
+        margin-top: -10px;
+        font-size: 0.5rem;
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 40%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.5rem;
+    } 
+
+    .popup .continue-button{
+        width: 75%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.5rem;
+    } 
+
+    .popup-container{
+        gap: 5px;
+    }
+}
+
+@media (max-width: 328px) {
+
+    .Title h1 {
+        font-size: 18px;
+    }
+
+    textarea{
+        margin-top: -12px;
+        font-size: 11.7px;
+    }
+
+    #question-text{
+        font-size: 14px;
+    }
+
+    .popup{
+        height: 29%;
+    }
+
+    .popup h2{
+        font-size: 0.6rem;
+    }
+
+    .popup p{
+        font-size: 0.48rem;
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 45%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.42rem;
+    } 
+
+    .popup .continue-button{
+        width: 80%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.45rem;
+    } 
+}
+
+@media (max-width: 305px) {
+
+    #question-text{
+        font-size: 13px;
+    }
+
+    textarea{
+        margin-top: -15px;
+    }
+
+    .tick-mark{
+        left: 82%;
+    }
+
+    .previous-question, .next-question{
+        font-size: 9px;
+    }
+
+    .popup{
+        height: 24%;
+    }
+
+    .popup h2{
+        font-size: 0.51rem;
+    }
+
+    .popup p{
+        font-size: 0.45rem;
+    }
+
+    .popup .cancel-button, .popup .yes-button{
+        width: 45%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.4rem;
+    } 
+
+    .popup .continue-button{
+        width: 85%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.42rem;
+    } 
+
+    .popup img{
+        left: 35%;
+    }
+}
+
+@media (max-width: 280px) {
+
+    #question-text{
+        font-size: 12px;
+    }
+
+    textarea{
+        font-size: 11.6px;
+    }
+
+    .previous-question, .next-question{
+        font-size: 8px;
+    }
+
+    .popup{
+        height: 24%;
+    }
+
+    .popup h2{
+        font-size: 0.48rem;
+    }
+
+    .popup p{
+        font-size: 0.4rem;
+        margin-bottom: -5px;
+    }
+
+    .popup-container{
+        margin-top: -5px;
+    }
+
+    .popup .cancel-button, .popup .yes-button {
+        width: 60%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.38rem;
+        margin: 2px 0px;
+    } 
+
+    .popup .continue-button{
+        width: 95%; 
+        height: auto;
+        padding: 10px 2px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.4rem;
+    } 
+
+}

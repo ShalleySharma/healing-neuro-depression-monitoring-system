@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healing Neuro</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+            background-image: url('../Images/BACKGROUND_land.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Background lines animation */
+        .background-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .line {
+            position: absolute;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.3);
+            animation: moveLine 8s infinite linear;
+        }
+        
+        @keyframes moveLine {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100vw);
+            }
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .logo {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        
+        .role-selection {
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        button {
+            background-color: #FFD54F;
+            border: none;
+            border-radius: 30px;
+            color: #333;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 40px;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        button.doctor-btn {
+            background-color: #77D7DB;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            margin-top: 40px;
+            color: #666;
+            font-size: 14px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Character illustrations */
+        .doctor-illustration, .patient-illustration {
+            position: absolute;
+            width: 200px;
+            height: auto;
+            bottom: 40px;
+        }
+        
+        .doctor-illustration {
+            left: 40px;
+        }
+        
+        .patient-illustration {
+            right: 40px;
+        }
+        
+        /* Animated figures for walking effect */
+        .doctor-figure, .patient-figure {
+            position: absolute;
+            width: 100px;
+            height: auto;
+            opacity: 0.8;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none; /* Hidden by default, enable if needed */
+        }
+        
+        .doctor-figure {
+            left: -100px;
+            animation: doctorWalk 3s linear infinite;
+        }
+        
+        .patient-figure {
+            right: -100px;
+            animation: patientWalk 3s linear infinite;
+        }
+        .doctor-illustration img {
+            transform: scaleX(-1); /* This flips the doctor image horizontally */
+        }
+        .patient-illustration img {
+            transform: scaleX(-1); /* This flips the patient image horizontally */
+        }
+        
+        @keyframes doctorWalk {
+            0% { transform: translateX(0) translateY(-50%); }
+            50% { transform: translateX(100px) translateY(-50%); }
+            100% { transform: translateX(0) translateY(-50%); }
+        }
+        
+        @keyframes patientWalk {
+            0% { transform: translateX(0) translateY(-50%); }
+            50% { transform: translateX(-100px) translateY(-50%); }
+            100% { transform: translateX(0) translateY(-50%); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .doctor-illustration, .patient-illustration {
+                width: 150px;
+                bottom: 20px;
+            }
+            
+            .buttons-container {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .doctor-illustration, .patient-illustration {
+                width: 100px;
+            }
+            
+            .container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Lines -->
+    <div class="background-lines">
+        <div class="line" style="top: 10%; width: 40%; animation-duration: 15s;"></div>
+        <div class="line" style="top: 20%; width: 60%; animation-duration: 12s; animation-delay: 1s;"></div>
+        <div class="line" style="top: 35%; width: 30%; animation-duration: 10s; animation-delay: 0.5s;"></div>
+        <div class="line" style="top: 50%; width: 70%; animation-duration: 18s; animation-delay: 2s;"></div>
+        <div class="line" style="top: 65%; width: 50%; animation-duration: 14s; animation-delay: 1.5s;"></div>
+        <div class="line" style="top: 80%; width: 45%; animation-duration: 16s; animation-delay: 3s;"></div>
+        <div class="line" style="top: 90%; width: 55%; animation-duration: 13s; animation-delay: 2.5s;"></div>
+    </div>
+
+    <div class="container">
+        <!-- Fixed Doctor Illustration -->
+        <div class="doctor-illustration">
+            <img src="../Images/doctor.jpg" alt="Doctor" style="width: 100%; height: auto;">
+        </div>
+        
+        <!-- Fixed Patient Illustration --> 
+        <div class="patient-illustration">
+            <img src="../Images/patient photo.jpg" alt="Patient" style="width: 100%; height: auto;">
+        </div>
+        
+        <img src="../Images/Logo_icon.png" alt="Healing Neuro Logo" class="logo">
+        <h1>Healing Neuro</h1>
+        <p class="tagline">Engage, Monitor, Heal</p>
+        
+        <div class="role-selection">
+            <p style="font-size: 20px; margin-bottom: 30px;">Please select your role:</p>
+            
+            <div class="buttons-container">
+                <button class="doctor-btn" onclick="location.href='../HTML/d_index.html'">I'm a Doctor</button>
+                <button onclick="location.href='../HTML/index.html'">I'm a User</button>
+
+            </div>
+        </div>
+        
+        <footer>
+            © 2025 Healing Neuro. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>

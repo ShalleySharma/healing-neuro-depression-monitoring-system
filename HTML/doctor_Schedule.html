@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/d_style.css">
+    <link rel="stylesheet" href="/css/doctor_Schedule.css">
+    <link rel="icon" href="/assets/logo.png" >
+    <title>HealingNeuro: A Depression Monitoring System</title>
+    
+</head>
+<body>
+    <div id="d_navbar"></div> <!-- Navbar Placeholder -->
+    <script>
+        // Include Navbar 
+        fetch('./d_navbar.html') 
+            .then(response => response.text())
+            .then(data => document.getElementById('d_navbar').innerHTML = data);
+    </script>
+
+<div class="container">
+    <div class="doctor-info">
+        <div class="doctor-avatar">
+            <img src="/Images/expert1.jpg" alt="Doctor's Avatar">
+        </div>
+        <div class="doctor-details">
+            <h2>Dr. Sarah Johnson</h2>
+            <p>Psychiatrist</p>
+            <p>Mental Health Specialist</p>
+        </div>
+        <div class="doctor-stats">
+            <div class="stat">
+                <div class="stat-number">20</div>
+                <div class="stat-label">Patients</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">8</div>
+                <div class="stat-label">This Week</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">2</div>
+                <div class="stat-label">Today</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="filters">
+        <div class="search-filter">
+            <i>🔍</i>
+            <input type="text" placeholder="Search patients">
+        </div>
+        <div class="date-filter">
+            <div class="date-display" id="currentDate">Today: April 25, 2025</div>
+            <input type="date" id="dateSelector">
+        </div>
+    </div>
+
+    <div class="tabs">
+        <div class="tab active" id="requestedTab">Requested <span id="requestCount">8</span></div>
+        <div class="tab" id="scheduledTab">Scheduled</div>
+    </div>
+
+    <div class="tab-content active" id="requested-content">
+        <div class="meeting-cards">
+            <div class="meeting-header">
+                <h3>Meeting Requests</h3>
+                <p>Approve or ignore requests</p>
+            </div>
+            
+            <div class="meeting-item">
+                <div class="patient-avatar">JD</div>
+                <div class="patient-info">
+                    <div class="patient-name">John Doe</div>
+                    <div class="meeting-time">10:00 AM - 11:00 AM</div>
+                </div>
+                <div class="meeting-actions">
+                    <button class="btn btn-confirm">Confirm</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+
+            <div class="meeting-item">
+                <div class="patient-avatar">JR</div>
+                <div class="patient-info">
+                    <div class="patient-name">Jane Robinson</div>
+                    <div class="meeting-time">1:00 PM - 2:00 PM</div>
+                </div>
+                <div class="meeting-actions">
+                    <button class="btn btn-confirm">Confirm</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+
+            <div class="meeting-item">
+                <div class="patient-avatar">MP</div>
+                <div class="patient-info">
+                    <div class="patient-name">Michael Parker</div>
+                    <div class="meeting-time">3:30 PM - 4:30 PM</div>
+                </div>
+                <div class="meeting-actions">
+                    <button class="btn btn-confirm">Confirm</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+
+            <div class="meeting-item">
+                <div class="patient-avatar">AS</div>
+                <div class="patient-info">
+                    <div class="patient-name">Amanda Smith</div>
+                    <div class="meeting-time">5:00 PM - 6:00 PM</div>
+                </div>
+                <div class="meeting-actions">
+                    <button class="btn btn-confirm">Confirm</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+
+            <div class="meeting-item">
+                <div class="patient-avatar">RW</div>
+                <div class="patient-info">
+                    <div class="patient-name">Robert Wilson</div>
+                    <div class="meeting-time">Tomorrow, 9:30 AM - 10:30 AM</div>
+                </div>
+                <div class="meeting-actions">
+                    <button class="btn btn-confirm">Confirm</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+
+            <div class="meeting-item">
+                <div class="patient-avatar">CL</div>
+                <div class="patient-info">
+                    <div class="patient-name">Christine Lee</div>
+                    <div class="meeting-time">Tomorrow, 2:00 PM - 3:00 PM</div>
+                </div>
+                <div class="meeting-actions">
+                    <button class="btn btn-confirm">Confirm</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+
+            <div class="meeting-item">
+                <div class="patient-avatar">BT</div>
+                <div class="patient-info">
+                    <div class="patient-name">Brian Taylor</div>
+                    <div class="meeting-time">Tomorrow, 4:30 PM - 5:30 PM</div>
+                </div>
+                <div class="meeting-actions">
+                    <button class="btn btn-confirm">Confirm</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+
+            <div class="meeting-item">
+                <div class="patient-avatar">KJ</div>
+                <div class="patient-info">
+                    <div class="patient-name">Karen Johnson</div>
+                    <div class="meeting-time">Apr 21, 11:00 AM - 12:00 PM</div>
+                </div>
+                <div class="meeting-actions">
+                    <button class="btn btn-confirm">Confirm</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="scheduled-content">
+        <div class="meeting-cards">
+            <div class="meeting-header">
+                <h3>Scheduled Meetings</h3>
+                <p>Your confirmed schedule for today</p>
+            </div>
+            
+            <div class="meeting-item">
+                <div class="patient-avatar">DH</div>
+                <div class="patient-info">
+                    <div class="patient-name">David Harris</div>
+                    <div class="meeting-time">9:00 AM - 10:00 AM</div>
+                </div>
+                <div class="meeting-actions">
+                    <button class="btn btn-details">Details</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+
+            <div class="meeting-item">
+                <div class="patient-avatar">EM</div>
+                <div class="patient-info">
+                    <div class="patient-name">Emily Miller</div>
+                    <div class="meeting-time">12:00 PM - 1:00 PM</div>
+                </div>
+                <div class="meeting-actions">
+                    <button class="btn btn-details">Details</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+
+            <div class="meeting-item">
+                <div class="patient-avatar">TW</div>
+                <div class="patient-info">
+                    <div class="patient-name">Thomas Williams</div>
+                    <div class="meeting-time">2:30 PM - 3:30 PM</div>
+                </div>
+                <div class="meeting-actions">
+                    <button class="btn btn-details">Details</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+
+            <div class="meeting-item">
+                <div class="patient-avatar">LN</div>
+                <div class="patient-info">
+                    <div class="patient-name">Lisa Nelson</div>
+                    <div class="meeting-time">5:00 PM - 6:00 PM</div>
+                </div>
+                <div class="meeting-actions">
+                    <button class="btn btn-details">Details</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/javascript/doctor_Schedule.js" defer></script>
+<script type="module" src="../JAVASCRIPT/d_script.js" defer></script>
+
+</body>
+</html>

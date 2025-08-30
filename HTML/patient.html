@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/d_style.css">
+    <link rel="stylesheet" href="/css/patient.css">
+    <link rel="icon" href="/assets/logo.png" >
+    <title>HealingNeuro: A Depression Monitoring System</title>
+    <!-- font link -->
+</head>
+<body>
+    <div id="d_navbar"></div> <!-- Navbar Placeholder -->
+    <script>
+        // Include Navbar
+        fetch('./d_navbar.html') 
+            .then(response => response.text())
+            .then(data => document.getElementById('d_navbar').innerHTML = data);
+    </script>
+
+<div class="container">
+    <div class="Counselor_heading">
+        <div class="quote">
+            <h2>Access your current patients, monitor their progress, and continue guiding them on their path to healing.</h2>
+            <button class="recommendation">My Patients</button>
+        </div> 
+        <div class="quote_pic">
+            <img src="../Images/monitor_element.png" alt="therapy image">
+
+        </div>
+
+    </div>
+
+    <div class="patients-section">
+        <!-- <h3>Questions</h3> -->
+        <div class="insta-style-tabs">
+          <div class="tabs">
+            <div class="tab active" onclick="toggleTab('all-list', this)">All Patients <span class="count-badge" id="all-count">0</span></div>
+            <div class="tab" onclick="toggleTab('already-list', this)">Already Treated <span class="count-badge" id="already-count">0</span></div>
+            <div class="tab" onclick="toggleTab('currently-list', this)">Currently Treated <span class="count-badge" id="current-count">0</span></div>
+          </div>
+        
+          <div class="patient-list" id="all-list">
+            <div class="products-container">
+ 
+                <div class="patient-card" data-name="patient-1">
+                    <!-- <i class="fas fa-times"></i> -->
+                    <img src="../Images/patient-1.png" alt="Patient Photo">
+                    <h3>Naina Sharma</h3>
+                    <div class="details">Age: 41 | Gender: Female</div>
+                    <div class="status">
+                        <i class="fas fa-notes-medical"></i> Current Concern: Depression, Stress
+                    </div>
+                    <p>Last session: 20 April 2025<br>Next session: 28 April 2025</p>
+                    <div class="buttons">
+                        <!-- <a href="patient-profile.html?id=1" class="view">View Details</a> -->
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+                
+         
+                <div class="patient-card" data-name="patient-2">
+                    <img src="../Images/patient-2.png" alt="Patient Photo">
+                    <h3>Arjun Mehra</h3>
+                    <div class="details">Age: 30 | Gender: Male</div>
+                    <div class="status">
+                        <i class="fas fa-notes-medical"></i> Current Concern: Depression, Low Motivation
+                    </div>
+                    <p>Last session: 01 April 2025<br>Next session: 08 April 2025</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+         
+                <div class="patient-card" data-name="patient-3">
+                    <img src="../Images/patient-3.png" alt="Patient Photo">
+                    <h3>Neha Verma</h3>
+                    <div class="details">Age: 18 | Gender: Female</div>
+                    <div class="status completed">
+                        <i class="fas fa-check-circle"></i> Treatment Completed
+                    </div>
+                    <p>Last session: 15 March 2025<br>Next session: —</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+         
+                <div class="patient-card" data-name="patient-4">
+                    <img src="../Images/patient-4.png" alt="Patient Photo">
+                    <h3>Rohit Khanna</h3>
+                    <div class="details">Age: 28 | Gender: Male</div>
+                    <div class="status">
+                        <i class="fas fa-notes-medical"></i> Current Concern: Relationship Issues
+                    </div>
+                    <p>Last session: 05 April 2025<br>Next session: 12 April 2025</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+         
+                <div class="patient-card" data-name="patient-5">
+                    <img src="../Images/patient-5.png" alt="Patient Photo">
+                    <h3>Simran Kapoor</h3>
+                    <div class="details">Age: 26 | Gender: Female</div>
+                    <div class="status completed">
+                        <i class="fas fa-check-circle"></i> Treatment Completed
+                    </div>
+                    <p>Last session: 22 March 2025<br>Next session: —</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+         
+                <div class="patient-card" data-name="patient-6">
+                    <img src="../Images/patient-6.png" alt="Patient Photo">
+                    <h3>Aryan Garg</h3>
+                    <div class="details">Age: 32 | Gender: Male</div>
+                    <div class="status">
+                        <i class="fas fa-notes-medical"></i> Current Concern: Anxiety, Depression
+                    </div>
+                    <p>Last session: 5 April 2025<br>Next session: 25 April 2025</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+         
+            </div>
+        
+            <!-- hide conseltants -->
+            <div class="products-container2">
+
+                <div class="patient-card" data-name="patient-6">
+                    <img src="../Images/patient-7.png" alt="Patient Photo">
+                    <h3>Vikas Thakur</h3>
+                    <div class="details">Age: 32 | Gender: Male</div>
+                    <div class="status">
+                        <i class="fas fa-notes-medical"></i> Current Concern: Anxiety, Depression, Anger
+                    </div>
+                    <p>Last session: 5 April 2025<br>Next session: 25 April 2025</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="patient-card" data-name="patient-6">
+                    <img src="../Images/patient-8.png" alt="Patient Photo">
+                    <h3>Chitra Jaiswal</h3>
+                    <div class="details">Age: 24 | Gender: Female</div>
+                    <div class="status">
+                        <i class="fas fa-notes-medical"></i> Current Concern: Anxiety, Depression
+                    </div>
+                    <p>Last session: 10 April 2025<br>Next session: 2 May 2025</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+                <div class="patient-card" data-name="patient-6">
+                    <img src="../Images/Patient-9.png" alt="Patient Photo">
+                    <h3>Ansh Kumar</h3>
+                    <div class="details">Age: 42 | Gender: Male</div>
+                    <div class="status">
+                        <i class="fas fa-notes-medical"></i> Current Concern: Anxiety, Depression, Relationship Issues
+                    </div>
+                    <p>Last session: 28 April 2025<br>Next session: 12 May 2025</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+                
+
+                <div class="patient-card" data-name="patient-3">
+                    <img src="../Images/patient-10.png" alt="Patient Photo">
+                    <h3>Kashish Kumari</h3>
+                    <div class="details">Age: 46 | Gender: Female</div>
+                    <div class="status completed">
+                        <i class="fas fa-check-circle"></i> Treatment Completed
+                    </div>
+                    <p>Last session: 10 April 2025<br>Next session: —</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="patient-card" data-name="patient-3">
+                    <img src="../Images/patient-13.png" alt="Patient Photo">
+                    <h3>Niket Gupta</h3>
+                    <div class="details">Age: 62 | Gender: Male</div>
+                    <div class="status completed">
+                        <i class="fas fa-check-circle"></i> Treatment Completed
+                    </div>
+                    <p>Last session: 28 April 2025<br>Next session: —</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="patient-card" data-name="patient-3">
+                    <img src="../Images/patient-11.png" alt="Patient Photo">
+                    <h3>Rohan Yadav</h3>
+                    <div class="details">Age: 21 | Gender: Male</div>
+                    <div class="status completed">
+                        <i class="fas fa-check-circle"></i> Treatment Completed
+                    </div>
+                    <p>Last session: 4 April 2025<br>Next session: —</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="patient-card" data-name="patient-3">
+                    <img src="../Images/patient-12.png" alt="Patient Photo">
+                    <h3>Prem Singh</h3>
+                    <div class="details">Age: 50 | Gender: Male</div>
+                    <div class="status completed">
+                        <i class="fas fa-check-circle"></i> Treatment Completed
+                    </div>
+                    <p>Last session: 15 March 2025<br>Next session: —</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+                
+            </div>
+            
+            <button class="more_counselor">Load more Counselors</button>
+            <button class="less_counselor" >Show less Counselors</button>
+         </div>
+         
+        
+         <div class="patient-list" id="already-list" style="display:none;">
+            <div class="products-container">
+                <div class="patient-card" data-name="patient-5">
+                    <img src="../Images/patient-5.png" alt="Patient Photo">
+                    <h3>Simran Kapoor</h3>
+                    <div class="details">Age: 26 | Gender: Female</div>
+                    <div class="status completed">
+                        <i class="fas fa-check-circle"></i> Treatment Completed
+                    </div>
+                    <p>Last session: 22 May 2025<br>Next session: —</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="patient-card" data-name="patient-3">
+                    <img src="../Images/patient-3.png" alt="Patient Photo">
+                    <h3>Neha Verma</h3>
+                    <div class="details">Age: 18 | Gender: Female</div>
+                    <div class="status completed">
+                        <i class="fas fa-check-circle"></i> Treatment Completed
+                    </div>
+                    <p>Last session: 15 May 2025<br>Next session: —</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="patient-card" data-name="patient-3">
+                    <img src="../Images/patient-13.png" alt="Patient Photo">
+                    <h3>Niket Gupta</h3>
+                    <div class="details">Age: 62 | Gender: Male</div>
+                    <div class="status completed">
+                        <i class="fas fa-check-circle"></i> Treatment Completed
+                    </div>
+                    <p>Last session: 28 April 2025<br>Next session: —</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="patient-card" data-name="patient-3">
+                    <img src="../Images/patient-10.png" alt="Patient Photo">
+                    <h3>Kashish Kumari</h3>
+                    <div class="details">Age: 46 | Gender: Female</div>
+                    <div class="status completed">
+                        <i class="fas fa-check-circle"></i> Treatment Completed
+                    </div>
+                    <p>Last session: 10 April 2025<br>Next session: —</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="patient-card" data-name="patient-3">
+                    <img src="../Images/patient-11.png" alt="Patient Photo">
+                    <h3>Rohan Yadav</h3>
+                    <div class="details">Age: 21 | Gender: Male</div>
+                    <div class="status completed">
+                        <i class="fas fa-check-circle"></i> Treatment Completed
+                    </div>
+                    <p>Last session: 4 April 2025<br>Next session: —</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="patient-card" data-name="patient-3">
+                    <img src="../Images/patient-12.png" alt="Patient Photo">
+                    <h3>Prem Singh</h3>
+                    <div class="details">Age: 50 | Gender: Male</div>
+                    <div class="status completed">
+                        <i class="fas fa-check-circle"></i> Treatment Completed
+                    </div>
+                    <p>Last session: 15 March 2025<br>Next session: —</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+            </div>
+         </div> 
+        
+         <div class="patient-list" id="currently-list" style="display:none;">
+            <div class="products-container">
+                <div class="patient-card" data-name="patient-6">
+                    <img src="../Images/patient-7.png" alt="Patient Photo">
+                    <h3>Vikas Thakur</h3>
+                    <div class="details">Age: 32 | Gender: Male</div>
+                    <div class="status">
+                        <i class="fas fa-notes-medical"></i> Current Concern: Anxiety, Depression, Anger
+                    </div>
+                    <p>Last session: 5 April 2025<br>Next session: 25 April 2025</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="patient-card" data-name="patient-6">
+                    <img src="../Images/patient-8.png" alt="Patient Photo">
+                    <h3>Chitra Jaiswal</h3>
+                    <div class="details">Age: 24 | Gender: Female</div>
+                    <div class="status">
+                        <i class="fas fa-notes-medical"></i> Current Concern: Anxiety, Depression
+                    </div>
+                    <p>Last session: 10 April 2025<br>Next session: 2 May 2025</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="patient-card" data-name="patient-1">
+                    <!-- <i class="fas fa-times"></i> -->
+                    <img src="../Images/patient-1.png" alt="Patient Photo">
+                    <h3 id="NainaS2025">Naina Sharma</h3>
+                    <div class="details">Age: 41 | Gender: Female</div>
+                    <div class="status">
+                        <i class="fas fa-notes-medical"></i> Current Concern: Depression, Stress
+                    </div>
+                    <p>Last session: 20 April 2025<br>Next session: 28 April 2025</p>
+                    <div class="buttons">
+                        <!-- <a href="patient-profile.html?id=1" class="view">View Details</a> -->
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+                
+         
+                <div class="patient-card" data-name="patient-2">
+                    <img src="../Images/patient-2.png" alt="Patient Photo">
+                    <h3>Arjun Mehra</h3>
+                    <div class="details">Age: 30 | Gender: Male</div>
+                    <div class="status">
+                        <i class="fas fa-notes-medical"></i> Current Concern: Depression, Low Motivation
+                    </div>
+                    <p>Last session: 01 April 2025<br>Next session: 08 April 2025</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="patient-card" data-name="patient-6">
+                    <img src="../Images/patient-9.png" alt="Patient Photo">
+                    <h3>Ansh Kumar</h3>
+                    <div class="details">Age: 42 | Gender: Male</div>
+                    <div class="status">
+                        <i class="fas fa-notes-medical"></i> Current Concern: Anxiety, Depression, Relationship Issues
+                    </div>
+                    <p>Last session: 28 April 2025<br>Next session: 12 May 2025</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+                
+                <div class="patient-card" data-name="patient-6">
+                    <img src="../Images/patient-6.png" alt="Patient Photo">
+                    <h3>Aryan Garg</h3>
+                    <div class="details">Age: 32 | Gender: Male</div>
+                    <div class="status">
+                        <i class="fas fa-notes-medical"></i> Current Concern: Anxiety, Depression
+                    </div>
+                    <p>Last session: 5 April 2025<br>Next session: 25 April 2025</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="patient-card" data-name="patient-4">
+                    <img src="../Images/patient-4.png" alt="Patient Photo">
+                    <h3>Rohit Khanna</h3>
+                    <div class="details">Age: 28 | Gender: Male</div>
+                    <div class="status">
+                        <i class="fas fa-notes-medical"></i> Current Concern: Relationship Issues
+                    </div>
+                    <p>Last session: 05 April 2025<br>Next session: 12 April 2025</p>
+                    <div class="buttons">
+                        <a href="#" class="session">View Profile</a>
+                    </div>
+                </div>
+            </div>        
+          </div>
+        </div> 
+                       
+    </div>
+
+    
+    
+    
+       
+    <!-- Rest part javascript -->
+    <script src="/javascript/patient.js" defer></script>
+    <script type="module" src="../JAVASCRIPT/d_script.js" defer></script>
+
+</body>
+</html>

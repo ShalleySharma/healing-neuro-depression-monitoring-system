@@ -1,0 +1,383 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* About Section */
+.about-depression {
+    width: 100%;
+    padding: 40px 0px 40px 80px;
+    background-color: #f9f9f900;
+}
+.about-depression h1 {
+    text-align:left;
+    font-size: 3rem; /* Increase the size */
+    font-weight: bold; /* Make it bold */
+    color: #333; /* Dark color for better readability */
+    margin-bottom:5px; /* Add spacing below the heading */
+    margin-top:100px;
+}
+
+.content-container {
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.text-content {
+    flex: 1;    
+    max-width: 600px;
+}
+
+.text-content h1 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.know-more-btn {
+    display:inline-block;
+    margin-top:15 px;
+    align-self: flex-start;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color:black;
+    background-color:#FFD93D;;
+    border: 2px solid #423b56;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.know-more-btn:hover {
+    background-color:#FFC107;
+    color:black;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Content */
+.image-content {
+    flex: 1;
+    text-align: center;
+    margin-top:2px;
+}
+
+.symptoms-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+
+    .about-depression{
+        margin: 40px 0px 40px 0px;
+    }
+
+    .content-container {
+        flex-direction: column; /* Stack elements vertically */
+        text-align: center;
+    }
+    .text-content{
+        order:1; /* Text moves below the image */
+    }
+
+
+    .image-content {
+        order:-1; /* Moves the image above text */
+    }
+
+    .symptoms-image {
+        max-width: 80%; /* Adjust image size for smaller screens */
+    }
+
+    .about-depression h1{
+        text-align: center;
+        margin: 70px auto 30px;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('background.png'); /* Path to your uploaded image */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the background image */
+    overflow-x: hidden;
+}
+
+
+/* Navbar */
+.navbar{
+    background-color: white;
+    position: fixed;
+    padding: 0 2rem ;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid black;
+    border-bottom: 2px  solid black;
+    align-items: center;
+}
+.nav-logo img{
+    height:50px;
+    width:auto;
+    /* margin-left: 3rem; */
+}
+.navbar.nav-option{
+    list-style-type: none; 
+    display: flex;
+    gap: 2rem; 
+}
+.nav-option li {
+    display: inline-block;
+    margin: 0 15px;
+}
+.nav-icons{
+    display: flex;
+    gap: 2rem;
+    align-items: center; 
+    font-size: 1.5rem;
+    margin: 0 15px;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+a:hover{
+    color: blueviolet;
+    font-weight: bold;
+}
+.pricebtn{
+    background-color: yellow;
+    padding: 0.5rem 1rem;
+    border:none;
+    outline: none;
+    text-align: center;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.pricebtn:hover{
+    color: #fff;
+    background-color: blueviolet;
+    transform: scale(1.05); 
+    transform-origin: center;
+}
+.pricebtn:active{
+    scale: 0.95;
+}
+.toggle_btn i{
+    cursor: pointer;
+    display: none;
+    padding: 0.5rem; 
+    font-size: 2rem;
+}
+.toggle_btn:hover {
+    background-color: rgb(240, 204, 240);
+    border-radius:50%;
+}
+
+/* Tests Section */
+.tests-section {
+    padding: 10px 20px;
+    background-color: #ffffff00;
+    border-top: 2px solid #dddddd00;
+    display: none; 
+    flex-direction: column;
+}
+
+.tests-section .test {
+    margin-bottom: 20px;
+    padding-left: 10px; /* Adds a bit of space from the left */
+}
+
+.tests-section h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px; /* Adds space below the heading */
+}
+
+.tests-section p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-left: 20px; /* Adds additional space from the left for the paragraph */
+}
+
+.button {
+    text-align: center; 
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: none;
+}
+
+.start-test-btn {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #FFD93D;
+    border: 2px solid #423b56;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.start-test-btn:hover {
+    background-color:#FFC107;
+    color:black;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.popup-overlay {
+    position:fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    
+}
+
+.condition-popup {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width:90%;
+    max-width: 850px;
+    height:auto;
+    max-height:80vh;
+    text-align: center;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0), 0 0 0 50px #f5a623;  */
+    /* border: 5px solid #f5a623; */
+    overflow-y: auto; /* Enables scrolling if needed */
+    position: relative;
+}
+
+.condition-popup h2 {
+    font-size:28px;
+    margin-bottom:20px;
+    margin-top: 30px;
+}
+
+.condition-popup p {
+    font-size:18px;
+    margin-bottom:20px;
+    overflow-y: auto;
+}
+
+.condition-popup button, .agree-button, .continue-button {
+    background-color:#FFD93D;;
+    border: 2px solid #423b56;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.condition-popup button:hover,.agree-button:hover, .continue-button:hover  {
+    background-color:#FFC107;
+    color:black;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Transition for sliding content */
+.popup-content {
+    transition: opacity 0.5s ease;
+}
+
+.popup-content.hidden {
+    opacity: 0;
+    display: none;
+}
+
+.popup-content.visible {
+    opacity: 1;
+    display: block;
+} 
+
+.hidden {
+    display: none;
+}
+.visible {
+    display: block;
+}
+.agree-button, .continue-button  { 
+    background-color: #FFD93D;
+    color: #000000;
+    padding: 10px 20px;
+    border: 2px solid #423b56;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.agree-button, .continue-button {
+    background-color: #FFC107;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.blur-background {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .condition-popup {
+        width:85%;
+        padding: 15px;
+        max-height: 70vh;
+    }
+    .condition-popup p{
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .condition-popup {
+        width:85%;
+        padding: 10px;
+        max-height: 60vh;
+    }
+    .condition-popup p{
+        font-size: 10px;
+    }
+}

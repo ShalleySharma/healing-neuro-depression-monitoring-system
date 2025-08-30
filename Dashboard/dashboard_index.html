@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healing Neuro Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./dashboard_style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/d_style.css">
+    <link rel="stylesheet" href="./sidebar.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#FFD93D',
+              blue: '#5367FF',
+              red: '#FF6767',
+              green: '#4CAF50',
+              bgGray: '#F8F8F8',
+            },
+            fontFamily: {
+              poppins: ['Poppins', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+  </head>
+  
+  <body class="bg-bgGray font-poppins">
+    <!-- <div id="navbar"></div>
+    <script>
+        fetch('../HTML/navbar.html')
+
+            .then(response => response.text())
+            .then(data => document.getElementById("navbar").innerHTML = data);
+    </script> -->
+
+    <div id="navbar" style="display: none;"></div>
+    <div id="d_navbar" style="display: none;"></div>
+
+    <script>
+      const doctorUsername = localStorage.getItem("Doctor_Username");
+
+      if (doctorUsername) {
+        // Show and load doctor navbar
+        document.getElementById("d_navbar").style.display = "block";
+
+        fetch('../HTML/d_navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("d_navbar").innerHTML = data;
+          })
+          .catch(error => console.error("Doctor navbar load error:", error));
+
+      } else {
+        // Show and load user navbar
+        document.getElementById("navbar").style.display = "block";
+
+        fetch('../HTML/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+          })
+          .catch(error => console.error("User navbar load error:", error));
+      }
+    </script>
+
+    <div id="sidebar"></div> <!-- Sidebar Placeholder -->
+    <script>
+        fetch('./sidebar.html')
+
+            .then(response => response.text())
+            .then(data => document.getElementById("sidebar").innerHTML = data);
+
+            document.addEventListener("DOMContentLoaded", function () {
+              const currentPage = window.location.pathname.split("/").pop(); 
+              const menuItems = document.querySelectorAll(".menu-item");
+              menuItems.forEach(item => item.classList.remove("active")); 
+
+              let activeItem;
+
+              if (currentPage === "dashboard_index.html") {
+                activeItem = document.getElementById("dashboard");
+              } else if (currentPage === "dashboard_score.html") {
+                activeItem = document.getElementById("depression-score");
+              } else if (currentPage === "dashboard_report.html") {
+                activeItem = document.getElementById("report");
+              } else if (currentPage === "dashboard_activity.html") {
+                activeItem = document.getElementById("activity");
+              }
+
+              if (activeItem) {
+                activeItem.classList.add("active");
+              }
+            });
+
+    </script>
+
+    <div class="flex ml-20 min-h-full flex-end w-[90%]">
+      <!-- Main Content Area -->
+      <div class="flex-1 pt-8 px-10 ml-24 relative">
+        <!-- Yellow Decoration -->
+        <div class="absolute top-0 right-0 w-96 h-40 bg-primary rounded-bl-full -z-10 ml-10"></div>
+        
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-4 mt-20">
+          <div class="date">
+            <input type="date" id="date-picker"/>
+          </div>
+          <div class="text-sm text-gray-500 flex items-center">
+            <span id="current-time">11:43 AM</span>
+            <span class="mx-2">•</span>
+            <span id="current-day">Today</span>
+          </div>
+        </div>
+        
+        <!-- Metrics Cards -->
+        <div class="grid grid-cols-3 gap-6 mb-4 ">
+          <!-- Depression Score Card -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm">
+            <div class="flex items-center mb-4">
+              <div class="w-8 h-8 rounded-lg bg-blue bg-opacity-20 flex items-center justify-center text-blue mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <span class="font-medium">Depression Score</span>
+            </div>
+            <div class="flex justify-center">
+              <div class="relative w-24 h-24">
+                <svg class="w-full h-full" viewBox="0 0 36 36">
+                  <circle cx="18" cy="18" r="16" fill="none" stroke="#edf2f7" stroke-width="2"></circle>
+                  <circle id="depression-score-circle" cx="18" cy="18" r="16" fill="none" stroke="#5367FF" stroke-width="2" stroke-dasharray="0, 100" stroke-dashoffset="25" transform="rotate(-90 18 18)"  style="transition: stroke-dashoffset 0.5s ease;"></circle>>
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <span id="depression-score-text" class="text-xl font-medium text-blue">--%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Daily Analysis Report Card -->
+          <div class="bg-white rounded-2xl p-5 shadow-sm">
+            <div class="flex items-center mb-4">
+              <div class="w-8 h-8 rounded-lg bg-green bg-opacity-20 flex items-center justify-center text-green mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+              </div>
+              <span class="font-medium">Daily Analysis Report</span>
+            </div>
+            <div class="flex justify-center">
+              <div class="relative w-3/4 h-10 ">
+                <img id="dashboard-report" src="./images/report.jpg" alt="Report" class="w-full mb-4 hover:scale-105 transition" />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- History Section -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm mb-6"> 
+          <h2 class="text-xl font-medium mb-4">Summary</h2>
+          <div class="overflow-hidden rounded-lg border border-gray-200">
+            <div class="grid grid-cols-3">
+              <div class="border-b border-r border-gray-200 p-4 font-medium">Date</div>
+              <div class="border-b border-r border-gray-200 p-4 font-medium">Activity</div>
+              <div class="border-b border-gray-200 p-4 font-medium">Completed</div>
+            </div>
+            
+            <div class="grid grid-cols-3">
+              <div class="border-b border-r border-gray-200 p-4">2025-03-19</div>
+              <div class="border-b border-r border-gray-200 p-4">Morning Exercise</div>
+              <div class="border-b border-gray-200 p-4 flex items-center justify-center">
+                <input type="checkbox" class="h-5 w-5 accent-green-500" checked>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3">
+              <div class="border-b border-r border-gray-200 p-4">2025-03-19</div>
+              <div class="border-b border-r border-gray-200 p-4">Read a Book</div>
+              <div class="border-b border-gray-200 p-4 flex items-center justify-center">
+                <input type="checkbox" class="h-5 w-5 accent-green-500">
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3">
+              <div class="border-b border-r border-gray-200 p-4">2025-03-19</div>
+              <div class="border-b border-r border-gray-200 p-4">Attend Therapy</div>
+              <div class="border-b border-gray-200 p-4 flex items-center justify-center">
+                <input type="checkbox" class="h-5 w-5 accent-green-500" checked>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3">
+              <div class="border-r border-gray-200 p-4">2025-03-19</div>
+              <div class="border-r border-gray-200 p-4">Meditation</div>
+              <div class="p-4 flex items-center justify-center">
+                <input type="checkbox" class="h-5 w-5 accent-green-500">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="w-72 p-6 bg-white border-l border-gray-100 mt-24">
+        <!-- Word Cloud Section -->
+        <div class="mb-8">
+          <h2 class="text-lg font-medium mb-4">Word Cloud</h2>
+          <div class="bg-white rounded-2xl p-6 shadow-sm flex items-center justify-center h-40 border border-gray-100">
+            <img src="images/image.jpg">
+          </div>
+        </div>
+        
+        <!-- Trend Graph Section -->
+        <div>
+          <h2 class="text-lg font-medium mb-4">Trend Graph</h2>
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <div class="relative h-40">
+              <!-- Y-axis and X-axis -->
+              <div class="absolute left-0 top-0 h-full w-px bg-gray-300"></div>
+              <div class="absolute bottom-0 left-0 w-full h-px bg-gray-300"></div>
+              
+              <!-- Graph line -->
+              <svg class="absolute inset-0" viewBox="0 0 200 100" preserveAspectRatio="none">
+                <polyline 
+                  points="0,80 40,70 80,50 120,60 160,30" 
+                  fill="none" 
+                  stroke="#FFD93D" 
+                  stroke-width="3"
+                />
+                <!-- Dots -->
+                <circle cx="0" cy="80" r="4" fill="#FFD93D" />
+                <circle cx="40" cy="70" r="4" fill="#FFD93D" />
+                <circle cx="80" cy="50" r="4" fill="#FFD93D" />
+                <circle cx="120" cy="60" r="4" fill="#FFD93D" />
+                <circle cx="160" cy="30" r="4" fill="#FFD93D" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      const formattedHours = hours % 12 || 12; 
+      const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+      const timeString = `${formattedHours}:${formattedMinutes} ${ampm}`;
+      
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      
+      const yesterday = new Date(today);
+      yesterday.setDate(yesterday.getDate() - 1);
+      
+      let dayString = 'Today';
+      const startOfDay = new Date(now);
+      startOfDay.setHours(0, 0, 0, 0);
+      
+      if (startOfDay.getTime() === yesterday.getTime()) {
+        dayString = 'Yesterday';
+      } else if (startOfDay.getTime() !== today.getTime()) {
+        const options = { month: 'short', day: 'numeric', year: 'numeric' };
+        dayString = now.toLocaleDateString('en-US', options);
+      }
+      
+      document.getElementById('current-time').textContent = timeString;
+      document.getElementById('current-day').textContent = dayString;
+    }
+    
+    updateDateTime();
+    
+    setInterval(updateDateTime, 60000);
+
+  </script>
+    <script type="module" src="../JAVASCRIPT/script.js"></script>
+    <script type="module" src="../JAVASCRIPT/d_script.js"></script>
+    <script type="module" src="./fetch_dashboard.js"></script>
+</html> 

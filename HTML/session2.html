@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/session2.css">
+    <title>Session II - HealingNeuro</title>
+    <link rel="icon" href="../Images/Logo.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="Title">
+        <h1>READY FOR THE 2nd SESSION</h1>
+    </div>
+
+    <div class="container">
+        <div class="progress-bar">
+            <span class="step" id="step-text">STEP 1 OF 6</span>
+            <div class="progress">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="question-container">
+            <div class="question-slide" id="question-1">
+                <h2 id="question-text">Think about a recent conflict you've had with someone close. What triggered the conflict, and how did you handled it?</h2>
+                <div class="input-container">
+                    <div class="textarea-wrapper">
+                        <textarea id="text-answer" placeholder="Write your response here..."></textarea>
+                        <span id="tick-mark" class="tick-mark" style="display: none;">✔</span>
+                    </div>
+                    <div class="button-container">
+                        <button class="save-button" onclick="saveResponse()">Save</button>
+                        <button class="clear-button" onclick="clearResponse()">Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-slide" id="question-2">
+                <h2 id="question-text">When you're feeling overwhelmed or anxious, what thoughts or emotions come up, and how do you typically handle them?</h2>
+                <div class="input-container">
+                    <div class="textarea-wrapper">
+                        <textarea id="text-answer" placeholder="Write your response here..."></textarea>
+                        <span id="tick-mark" class="tick-mark" style="display: none;">✔</span>
+                    </div>
+                    <div class="button-container">
+                        <button class="save-button" onclick="saveResponse()">Save</button>
+                        <button class="clear-button" onclick="clearResponse()">Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-slide" id="question-3">
+                <h2 id="question-text">Can you share a time when you felt truly fulfilled or satisfied? What were you doing, and why was it meaningful to you?</h2>
+                <div class="input-container">
+                    <div class="textarea-wrapper">
+                        <textarea id="text-answer" placeholder="Write your response here..."></textarea>
+                        <span id="tick-mark" class="tick-mark" style="display: none;">✔</span>
+                    </div>
+                    <div class="button-container">
+                        <button class="save-button" onclick="saveResponse()">Save</button>
+                        <button class="clear-button" onclick="clearResponse()">Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-slide" id="question-4">
+                <h2 id="question-text">What goal have you struggled to achieve. What obstacles have you faced, and what steps have you taken to overcome them?</h2>
+                <div class="input-container">
+                    <div class="textarea-wrapper">
+                        <textarea id="text-answer" placeholder="Write your response here..."></textarea>
+                        <span id="tick-mark" class="tick-mark" style="display: none;">✔</span>
+                    </div>
+                    <div class="button-container">
+                        <button class="save-button" onclick="saveResponse()">Save</button>
+                        <button class="clear-button" onclick="clearResponse()">Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-slide" id="question-5">
+                <h2 id="question-text">How would you approach adapting to a major life transition, like starting a new job or moving to a new city?</h2>
+                <div class="input-container">
+                    <div class="textarea-wrapper">
+                        <textarea id="text-answer" placeholder="Write your response here..."></textarea>
+                        <span id="tick-mark" class="tick-mark" style="display: none;">✔</span>
+                    </div>
+                    <div class="button-container">
+                        <button class="save-button" onclick="saveResponse()">Save</button>
+                        <button class="clear-button" onclick="clearResponse()">Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-slide" id="question-6">
+                <h2 id="question-text">If you could change one thing about your current situation, what would it be, and how it would improve your life?
+                </h2>
+                <div class="input-container">
+                    <div class="textarea-wrapper">
+                        <textarea id="text-answer" placeholder="Write your response here..."></textarea>
+                        <span id="tick-mark" class="tick-mark" style="display: none;">✔</span>
+                    </div>
+                    <div class="button-container">
+                        <button class="save-button" onclick="saveResponse()">Save</button>
+                        <button class="clear-button" onclick="clearResponse()">Clear</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="navigation">
+            <button class="previous-question" onclick="goToPreviousQuestion()">PREVIOUS QUESTION</button>
+            <button class="next-question" onclick="goToNextQuestion()">NEXT QUESTION</button>
+        </div>
+
+        <div class="button">
+            <a href="#" onclick="showPopup(); return false;" style="margin-right: 0;">SUBMIT</a>
+        </div>
+
+        <div id="popup" class="popup hidden">
+            <div id="conformation" class="content visible" style="margin-right: 25px; margin-left: 25px;">
+                <img src="../Images/cross.png">
+                <h2>ARE YOU SURE</h2>
+                <p>Would you like to submit this session? Please note that once you click 'Yes,' you won't be able to modify your responses.</p>
+                <hr style="width: 100%; margin: 20px auto; border: 0.5px solid #ddd;">
+                <div class="popup-container">
+                    <button class="cancel-button" onclick="closePopup()">Cancel</button>
+                    <button class="yes-button" onclick="showNextContent()">Yes</button>
+                </div>
+            </div>
+            <div id="final_submission" class="content hidden" style="margin-right: 30px; margin-left: 30px;">
+                <img src="../Images/tick.png">
+                <h2 >Session 2 Completed!</h2>
+                <p style="margin-bottom: 19px;">Your responses have been recorded. Please proceed to Session 3 to continue.</p>
+                <hr style="width: 100%; margin: 19px auto; border: 0.5px solid #ddd;">
+                <button class="continue-button" type="button" onclick="closePopup(); window.location.href = 'session3.html'">Continue</button>
+            </div>
+        </div>
+    
+        <!-- Overlay to dim background when pop-up is active -->
+        <div id="overlay" class="overlay"></div>
+
+    </div>
+
+    <script type="module" src="../JAVASCRIPT/session2_script.js"></script>
+    <script type="module" src="../JAVASCRIPT/Flask_script.js"></script>
+</body>
+</html>
